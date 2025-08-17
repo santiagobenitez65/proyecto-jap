@@ -16,3 +16,8 @@ p {
     text-indent: 15px;
     color: rgb(95, 93, 93)
 }
+
+.precio {
+    width: 100px;
+    color: rgb(95, 93, 93);
+}
