@@ -1,3 +1,34 @@
+img {
+    width: 100%;
+}
+
+#prod-main {
+    background-color: black;
+    width: 100dvw;
+}
+
+#card-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+    grid-template-rows: max-content;
+    gap: 1rem;
+} 
+
+.full-container {
+    margin: 0;
+    display: flex;
+    justify-content:space-between;
+    gap: 20px;
+}
+
+.card-box {
+    background-color: aqua;
+    
+    max-height: 350px;
+}
+
 .container-barra {
   display: flex;
   gap: 20px; 
