@@ -88,6 +88,14 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
+
+  <!-- Verificación de sesión (Desafío) -->
+  <script>
+   // Si no existe usuario en localStorage, redirige al login
+   if (!localStorage.getItem("usuario")) {
+    window.location.href = "login.html";
+   }
+  </script> 
 </body>
 
 </html>
