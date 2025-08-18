@@ -26,9 +26,9 @@ function showItemCards(arrayOfProducts) {
             <div class="card-box">
                 <img src="` + product.image + `" alt="Imagen de un auto">
                 <h6>` + product.name + `</h6>
-                <p>` + product.description + `</p>
-                <h6>` + product.currency + product.cost + `</h6>
-                <hr>
+                <p class="descripcion">` + product.description + `</p>
+                <h6 class="costo">` + product.currency + " " + product.cost + `</h6>
+                <hr style="height: 2px; opacity: 1;">
                 <p class="cant-vendidos">Cantidad de vendidos: ` + product.soldCount + `</p>
             </div>
         `
