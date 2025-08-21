@@ -8,8 +8,6 @@ h4, .descripcion {
     margin-left: 2%;
 }
 
-
-
 .sidebar, .card-box {
     border: #FFB33A solid 2px;
 }
@@ -23,7 +21,7 @@ h4, .descripcion {
     display: grid;
     width: auto;
     grid-template-columns: 
-        repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     grid-template-rows: max-content;
     gap: 3rem;
     
