@@ -110,6 +110,7 @@ button:hover {
   }
 
   .mobile-logo {
+
     max-width: 100%; 
     height: auto; 
     margin-bottom: 2em;     
@@ -128,13 +129,7 @@ button:hover {
     display: none;
   }
 
-  footer {
-    text-align: left;
-    padding: 2em;
-  }
-
   footer p {
     margin-left: 2em;
-    text-align: left;
   }
 }
