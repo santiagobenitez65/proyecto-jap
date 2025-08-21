@@ -18,6 +18,7 @@ footer {
 }
 
 footer p {
+  margin-left: 10em;
   text-align: left;
   padding: 1em;
   font-size: 14px;
@@ -48,7 +49,7 @@ main {
   width: 100%;
   max-width: 30em;
   height: auto;
-  padding: 2em;
+  padding: 4em;
   border-radius: 20px;
   box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.3);
 }
@@ -93,6 +94,10 @@ button:hover {
   cursor: pointer;
 }
 
+.mobile-title {
+    display: none;
+}
+
 
 @media (max-width: 768px) {
   main {
@@ -100,17 +105,36 @@ button:hover {
     gap: 2em;
   }
 
+  .mobile-title {
+   display: block;
+  }
+
+  .mobile-logo {
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 2em;     
+  }
+
+  .login-container {
+    height: 70vh;
+  }
+
+  .input-box {
+    padding: 1.5em;
+    width: 100%;
+  }
+
   .image {
-    max-width: 100%;
+    display: none;
   }
 
   footer {
     text-align: left;
+    padding: 2em;
   }
 
   footer p {
-    padding: 0;
-    margin: 0;
+    margin-left: 2em;
     text-align: left;
   }
 }
