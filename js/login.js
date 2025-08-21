@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const usuarioGuardado = localStorage.getItem("usuario");
+  const passwordGuardada = localStorage.getItem("password");
+
+  if (usuarioGuardado && passwordGuardada){
+    window.location.href = "index.html";
+  
+    return;
+  }
+
   const loginButton = document.getElementById("logButton");
 
   loginButton.addEventListener("click", () => {
@@ -10,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    localStorage.setItem("usuario", username);
+    localStorage.setItem("password", password);
+
     window.location.href = "index.html";
+
   });
 });
