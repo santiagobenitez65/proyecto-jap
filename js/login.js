@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const usuarioGuardado = localStorage.getItem("usuario");
-  const passwordGuardada = localStorage.getItem("password");
+  const usuarioGuardado = sessionStorage.getItem("usuario");
+  const passwordGuardada = sessionStorage.getItem("password");
 
   if (usuarioGuardado && passwordGuardada){
     window.location.href = "index.html";
@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    localStorage.setItem("usuario", username);
-    localStorage.setItem("password", password);
+    sessionStorage.setItem("usuario", username);
+    sessionStorage.setItem("password", password);
 
     window.location.href = "index.html";
 
