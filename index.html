@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -92,7 +92,7 @@
   <!-- Verificación de sesión (Desafío) -->
   <script>
    // Si no existe usuario en localStorage, redirige al login
-   if (!localStorage.getItem("usuario")) {
+   if (!sessionStorage.getItem("usuario")) {
     window.location.href = "login.html";
    }
   </script>
@@ -100,6 +100,7 @@
 
 
 </html>
+
 
 
 
