@@ -91,7 +91,7 @@
 
   <!-- Verificación de sesión (Desafío) -->
   <script>
-   // Si no existe usuario en localStorage, redirige al login
+   // Si no existe usuario en sessionStorage, redirige al login
    if (!sessionStorage.getItem("usuario")) {
     window.location.href = "login.html";
    }
@@ -100,6 +100,7 @@
 
 
 </html>
+
 
 
 
