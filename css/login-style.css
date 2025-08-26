@@ -1,15 +1,26 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
+  margin-top: auto;
   width: 100%;
   background: #D9D9D9;
+  padding: 1em;
+}
+
+footer p {
+  margin-left: 10em;
   text-align: left;
-  padding: 2em  ;
+  padding: 1em;
   font-size: 14px;
 }
 
@@ -19,62 +30,106 @@ main {
   justify-content: space-around;
   align-items: center;
   gap: 50px;
-
+  flex-wrap: wrap; 
+  padding: 2em;
 }
 
-.image{
-    margin-top: 3em;
-    width: 700px;
+.image {
+  margin-top: 2em;
+  max-width: 100%; 
+  height: auto;
 }
 
 .login-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #E3E3E3;
-    width: 30em;
-    height: 20em;
-    border-radius: 20px;
-    margin-left: 10em;
-    margin-top: 10em;
-    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E3E3E3;
+  width: 100%;
+  max-width: 30em;
+  height: auto;
+  padding: 4em;
+  border-radius: 20px;
+  box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 #name {
-    margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 #password {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-a{
-    text-decoration: none;
-    color: rgb(0, 102, 255);
+a {
+  text-decoration: none;
+  color: rgb(0, 102, 255);
 }
 
 .input-box {
-padding: 1em;
-width: 20em;
-border-style: solid;
-border-radius: 10px;
-border-color:  #ffb33a;
+  padding: 1em;
+  width: 100%;
+  max-width: 20em;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #ffb33a;
 }
 
 button {
-    height: 3.5em;
-    width: 15em;
-    border-radius: 10px;
-    border-style: none;
-    background: #ffb33a;
-    color: white;
-    font-weight: bold;
-    letter-spacing:0.2em;
-    margin-top: 1em;
+  height: 3.5em;
+  width: 100%;
+  max-width: 15em;
+  border-radius: 10px;
+  border-style: none;
+  background: #ffb33a;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  margin-top: 1em;
 }
 
 button:hover {
-    background-color: #e49a23;
-    cursor: pointer;
+  background-color: #e49a23;
+  cursor: pointer;
+}
+
+.mobile-title {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .mobile-title {
+   display: block;
+  }
+
+  .mobile-logo {
+
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 2em;     
+  }
+
+  .login-container {
+    height: 70vh;
+  }
+
+  .input-box {
+    padding: 1.5em;
+    width: 100%;
+  }
+
+  .image {
+    display: none;
+  }
+
+  footer p {
+    margin-left: 2em;
+  }
 }
