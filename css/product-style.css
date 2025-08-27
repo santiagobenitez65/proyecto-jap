@@ -18,13 +18,12 @@ h4, .descripcion {
 }
 
 #card-container {
+    width: calc(100% - 150px);
     display: grid;
-    width: auto;
     grid-template-columns: 
         repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     grid-template-rows: max-content;
     gap: 3rem;
-    
 } 
 
 .full-container {
@@ -57,9 +56,24 @@ h4, .descripcion {
     color: rgb(95, 93, 93)
 }
 
+#selector-de-precio {
+    display: flex;
+    flex-direction: column;
+}
+
+#separador{
+    margin: 0;
+    height: fit-content;
+    padding: 0;
+    text-align: center;
+}
+
 .precio {
+    height: 30px;
     width: 100px;
-    color: rgb(95, 93, 93);
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 hr {
@@ -134,8 +148,39 @@ h2 {
 #resultados {
     top: 40px;
 }
+
+/*El media query que maneja el responsive para celu*/
 @media (max-width: 480px) {
-    .full-container {
-        margin-right: 0.5em;
+    .full-container{
+        display: block;
+        width: 100%;
+    }
+
+    #card-container, .sidebar {
+        width: 95%;
+        margin: auto;
+    }
+
+    .sidebar{
+        margin-bottom: 3em;
+        display: flex;
+        justify-content: space-between;
+    }
+   
+    #card-container {
+        width: 80%;
+    }
+
+    h2, #resultados{
+        position: static;
+        text-align: start;
+        margin: 0;
+        margin-left: 0.5em;
+    }
+
+    #resultados {
+        text-indent: 1em;
+        margin-bottom: 1em;
+
     }
 }

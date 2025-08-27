@@ -47,35 +47,47 @@
         <option value="2">$ Mayor a menor</option>
         <option value="3">$ Menor a mayor</option>
       </select>
-      
+
     </div>
     <div class="full-container">
-      
+
       <div class="sidebar-container">
         <h2>Autos</h2>
         <p id="resultados"></p>
         <aside class="sidebar">
-        <h4><b>Marca</b></h4>
-        <p class="selector-marca-modelo">Fiat</p>
-        <p class="selector-marca-modelo">Peugeot</p>
-        <p class="selector-marca-modelo">Bugatti</p>
-        <p class="selector-marca-modelo">Suzuki</p>
-        <p class="selector-marca-modelo">Chevrolet</p>
-        <br>
-        <h4><b>Modelo</b></h4>
-        <p class="selector-marca-modelo">Onix Joy</p>
-        <p class="selector-marca-modelo">Celerio</p>
-        <p class="selector-marca-modelo">Way</p>
-        <p class="selector-marca-modelo">208</p>
-        <p class="selector-marca-modelo">Chiron</p>
-        <br>
-        <h4><b>Precio/USD</b></h4>
-        <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo">
-        <input class="precio" id="maximo" name="precioMax" placeholder="Máximo">
-      </aside>
+          <div id="selector-de-marca">
+            <h4><b>Marca</b></h4>
+            <p class="selector-marca-modelo">Fiat</p>
+            <p class="selector-marca-modelo">Peugeot</p>
+            <p class="selector-marca-modelo">Bugatti</p>
+            <p class="selector-marca-modelo">Suzuki</p>
+            <p class="selector-marca-modelo">Chevrolet</p>
+          </div>
+
+          <br>
+
+          <div id="selector-de-modelo">
+            <h4><b>Modelo</b></h4>
+            <p class="selector-marca-modelo">Onix Joy</p>
+            <p class="selector-marca-modelo">Celerio</p>
+            <p class="selector-marca-modelo">Way</p>
+            <p class="selector-marca-modelo">208</p>
+            <p class="selector-marca-modelo">Chiron</p>
+          </div>
+
+          <br>
+
+          <div id="selector-de-precio">
+            <h4><b>Precio/USD</b></h4>
+            <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo">
+            <p id="separador">-</p>
+            <input class="precio" id="maximo" name="precioMax" placeholder="Máximo">
+          </div>
+
+        </aside>
       </div>
 
-      <div id="card-container" style="width: calc(100% - 150px);">
+      <div id="card-container">
 
       </div>
     </div>
