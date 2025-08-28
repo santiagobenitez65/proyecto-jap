@@ -39,3 +39,10 @@ let getJSONData = function(url){
         return result;
     });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const userNav = document.getElementById("usuario-nav");
+  if (userNav) {
+    const usuario = sessionStorage.getItem("usuario");
+    userNav.textContent = usuario;
+  }
+});
