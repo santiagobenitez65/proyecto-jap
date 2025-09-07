@@ -102,3 +102,31 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//*Orden de los productos*//
+let productos = [];
+let ordenados = [];
+
+     fetchInfo("https://japceibal.github.io/emercado-api/cats_products/101.json").then(result => {
+        productos = result.products; 
+        ordenados = [...productos];
+        showItemCards(ordenados);
+        resultados.innerText = `Resultados: ${ordenados.length}`;
+    });
+
+document.getElementById("filtro").addEventListener("change", (event) => {
+  const opcion = event.target.value;
+
+  ordenados = [...productos]; 
+
+  if (opcion === "1") {
+    ordenados.sort((a, b) => b.soldCount - a.soldCount);
+  } else if (opcion === "2") {
+    ordenados.sort((a, b) => b.cost - a.cost);
+  } else if (opcion === "3") {
+    ordenados.sort((a, b) => a.cost - b.cost);
+  } else {
+    console.log("Orden por defecto");
+  }
+
+  showItemCards(ordenados);
+});
