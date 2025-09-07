@@ -11,6 +11,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/product-style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\filtro-precio.css">
 </head>
 
 <body>
@@ -38,8 +39,37 @@
     <p id="usuario-nav"></p>
   </nav>
   <main>
-    <div class="filtros-orden">
 
+    <div class="top-bar">
+      <div class="titulo-resultados">
+        <h2>Autos</h2>
+        <p id="resultados"></p>
+      </div>
+
+      <div class="barra-filtro">
+        <div id="selector-de-precio">
+          <div class="fila">
+            <p><b>Precio</b></p>
+            <select id="moneda">
+              <option value="USD">USD</option>
+              <option value="UY">$UY</option>
+            </select>
+          </div>
+
+          <div class="fila">
+            <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo">
+            <input class="precio" id="maximo" name="precioMax" placeholder="Máximo">
+          </div>
+
+          <div class="fila">
+            <button id="aplicar">Aplicar</button>
+            <button id="limpiar">Limpiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="filtros-orden">
       <p>Ordenar por </p>
       <select id="filtro">
         <option value="">Por defecto</option>
@@ -50,10 +80,7 @@
 
     </div>
     <div class="full-container">
-
       <div class="sidebar-container">
-        <h2 id="titulo"></h2>
-        <p id="resultados"></p>
         <aside class="sidebar">
           <div id="selector-de-marca">
             <h4><b>Marca</b></h4>
@@ -74,16 +101,6 @@
             <p class="selector-marca-modelo">208</p>
             <p class="selector-marca-modelo">Chiron</p>
           </div>
-
-          <br>
-
-          <div id="selector-de-precio">
-            <h4><b>Precio/USD</b></h4>
-            <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo">
-            <p id="separador">-</p>
-            <input class="precio" id="maximo" name="precioMax" placeholder="Máximo">
-          </div>
-
         </aside>
       </div>
 

@@ -62,3 +62,43 @@ document.addEventListener("DOMContentLoaded", function() {
         resultados.innerText = `Resultados: ${productos.length}` 
     })
 })
+
+
+//*Filtrado de precios*//
+document.addEventListener("DOMContentLoaded", function() {
+    const resultados = document.getElementById("resultados");
+    const botonAplicar = document.getElementById("aplicar");
+    const botonLimpiar = document.getElementById("limpiar");
+
+    let productos = [];
+
+     fetchInfo("https://japceibal.github.io/emercado-api/cats_products/101.json").then(result => {
+        productos = result.products; 
+        showItemCards(productos);
+        resultados.innerText = `Resultados: ${productos.length}`;
+    });
+
+    botonAplicar.addEventListener("click", () => {
+        const min = parseFloat(document.getElementById("minimo").value) || 0;
+        const max = parseFloat(document.getElementById("maximo").value) || Infinity;
+        const moneda = document.getElementById("moneda").value;
+
+        const filtrados = productos.filter(p =>
+            p.currency === moneda &&
+            p.cost >= min &&
+            p.cost <= max
+        );
+
+        showItemCards(filtrados);
+        resultados.innerText = `Resultados: ${filtrados.length}`;
+    });
+
+    botonLimpiar.addEventListener("click", () => {
+        document.getElementById("minimo").value = "";
+        document.getElementById("maximo").value = "";
+        showItemCards(productos);
+        resultados.innerText = `Resultados: ${productos.length}`;
+    });
+});
+
+
