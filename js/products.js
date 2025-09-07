@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //*Orden de los productos*//
 let productos = [];
-let ordenados = [];
 let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`
 
      fetchInfo(url).then(result => {
