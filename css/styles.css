@@ -188,3 +188,16 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#usuario-nav {
+  color: rgba(255, 255, 255, .55);
+  margin: 0;
+  position: absolute;
+  right: 5%;
+  top: 9px;
+  font-size: 18px;
+}
+
+#usuario-nav:hover {
+  color: rgba(255, 255, 255, 0.75);
+}

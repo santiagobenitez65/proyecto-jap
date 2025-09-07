@@ -51,10 +51,14 @@ function toggleHeartSelection(id) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    const titulo = document.getElementById("titulo")
     const resultados = document.getElementById("resultados")
-    fetchInfo("https://japceibal.github.io/emercado-api/cats_products/101.json").then(result => {
-        let productos = result.products;
+    let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`
+    fetchInfo(url).then(result => {
+        console.log(result)
+        let productos = result.products; //ordenar esta lista antes de darsela a showItemCards()
         showItemCards(productos);
+        titulo.innerText = result.catName; 
         resultados.innerText = `Resultados: ${productos.length}` 
     })
 })
