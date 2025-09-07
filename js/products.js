@@ -71,8 +71,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const botonLimpiar = document.getElementById("limpiar");
 
     let productos = [];
+    let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`
 
-     fetchInfo("https://japceibal.github.io/emercado-api/cats_products/101.json").then(result => {
+     fetchInfo(url).then(result => {
         productos = result.products; 
         showItemCards(productos);
         resultados.innerText = `Resultados: ${productos.length}`;
@@ -105,8 +106,9 @@ document.addEventListener("DOMContentLoaded", function() {
 //*Orden de los productos*//
 let productos = [];
 let ordenados = [];
+let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`
 
-     fetchInfo("https://japceibal.github.io/emercado-api/cats_products/101.json").then(result => {
+     fetchInfo(url).then(result => {
         productos = result.products; 
         ordenados = [...productos];
         showItemCards(ordenados);
