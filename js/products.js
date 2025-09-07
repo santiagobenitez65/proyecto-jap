@@ -110,25 +110,22 @@ let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage
 
      fetchInfo(url).then(result => {
         productos = result.products; 
-        ordenados = [...productos];
-        showItemCards(ordenados);
-        resultados.innerText = `Resultados: ${ordenados.length}`;
+        showItemCards(productos);
+        resultados.innerText = `Resultados: ${productos.length}`;
     });
 
 document.getElementById("filtro").addEventListener("change", (event) => {
   const opcion = event.target.value;
 
-  ordenados = [...productos]; 
-
   if (opcion === "1") {
-    ordenados.sort((a, b) => b.soldCount - a.soldCount);
+    productos.sort((a, b) => b.soldCount - a.soldCount);
   } else if (opcion === "2") {
-    ordenados.sort((a, b) => b.cost - a.cost);
+    productos.sort((a, b) => b.cost - a.cost);
   } else if (opcion === "3") {
-    ordenados.sort((a, b) => a.cost - b.cost);
+    productos.sort((a, b) => a.cost - b.cost);
   } else {
     console.log("Orden por defecto");
   }
 
-  showItemCards(ordenados);
+  showItemCards(productos);
 });
