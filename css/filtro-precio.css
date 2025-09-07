@@ -1,3 +1,4 @@
+/*Filtros de precio y  título*/
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -60,6 +61,18 @@
   color: white;
 }
 
+/*Orden*/
+.filtros-orden {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    border-radius: 5px;
+    margin-left: 82%; 
+    margin-right: 2%; 
+    font-size: 14px;
+}
+
+
 @media screen and (max-width: 768px) { 
     .barra-filtro {
     margin-top: 2px;
@@ -68,6 +81,10 @@
     padding: 3px;
     background-color: rgb(168, 162, 162,0.2); 
     border:  #FFB33A solid 1px;
+    }
+
+    .filtros-orden{
+    margin-left: 72%;
     }
 }
 
@@ -84,5 +101,9 @@
 
   .titulo-resultados {
     flex-direction: row;
+  }
+
+  .filtros-orden{
+    margin-left: 36%;
   }
 }
