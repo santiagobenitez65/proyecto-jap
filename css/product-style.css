@@ -30,7 +30,7 @@ h4,
     width: calc(100% - 150px);
     display: grid;
     grid-template-columns:
-        repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+        repeat(auto-fit, minmax(min(350px, 100%), 20%));
     grid-template-rows: max-content;
     gap: 3rem;
 }
