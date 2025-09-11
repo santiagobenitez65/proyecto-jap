@@ -21,9 +21,14 @@ h4, .descripcion {
 
 #card-container {
     display: grid;
+<<<<<<< Updated upstream
     width: auto;
     grid-template-columns: 
         repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+=======
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(350px, 100%), 20%));
+>>>>>>> Stashed changes
     grid-template-rows: max-content;
     gap: 3rem;
     
@@ -132,8 +137,28 @@ h2 {
 #resultados {
     top: 40px;
 }
+<<<<<<< Updated upstream
+=======
+
+#buscador {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    padding: 8px 12px;
+    border: 2px solid #FFB33A;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.9rem;
+    box-sizing: border-box; /* Muy importante para que el padding no haga que se salga */
+    transition: 0.3s all;
+}
+
+/*El media query que maneja el responsive para celu*/
+>>>>>>> Stashed changes
 @media (max-width: 480px) {
     .full-container {
         margin-right: 0.5em;
+    }
+
+    #buscador {
+        width: 100%;
     }
 }

@@ -54,6 +54,7 @@
         <h2>Autos</h2>
         <p id="resultados"></p>
         <aside class="sidebar">
+<<<<<<< Updated upstream
         <h4><b>Marca</b></h4>
         <p class="selector-marca-modelo">Fiat</p>
         <p class="selector-marca-modelo">Peugeot</p>
@@ -72,6 +73,32 @@
         <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo">
         <input class="precio" id="maximo" name="precioMax" placeholder="Máximo">
       </aside>
+=======
+          <div id="selector-de-precio">
+            <div class="fila">
+              <p><b>Precio</b></p>
+              <select id="moneda">
+                <option value="USD">USD</option>
+                <option value="UYU">UYU</option>
+              </select>
+            </div>
+             <div id="buscador-nombre" class="fila">
+                <p><b>Buscar</b></p>
+                <input type="search" id="buscador" placeholder="Buscar productos..." />
+            </div>
+
+            <div class="fila" id="entradas-precio">
+              <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo" />
+              <input class="precio" id="maximo" name="precioMax" placeholder="Máximo" />
+            </div>
+
+            <div class="fila">
+              <button id="aplicar">Aplicar</button>
+              <button id="limpiar">Limpiar</button>
+            </div>
+          </div>
+        </aside>
+>>>>>>> Stashed changes
       </div>
 
       <div id="card-container" style="width: calc(100% - 150px);">

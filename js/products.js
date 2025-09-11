@@ -57,4 +57,86 @@ document.addEventListener("DOMContentLoaded", function() {
         showItemCards(productos);
         resultados.innerText = `Resultados: ${productos.length}` 
     })
+<<<<<<< Updated upstream
 })
+=======
+})
+
+
+//*Filtrado de precios*//
+document.addEventListener("DOMContentLoaded", function() {
+    const resultados = document.getElementById("resultados");
+    const botonAplicar = document.getElementById("aplicar");
+    const botonLimpiar = document.getElementById("limpiar");
+
+    let productos = [];
+    let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`
+
+     fetchInfo(url).then(result => {
+        productos = result.products; 
+        showItemCards(productos);
+        resultados.innerText = `Resultados: ${productos.length}`;
+    });
+
+    botonAplicar.addEventListener("click", () => {
+        const min = parseFloat(document.getElementById("minimo").value) || 0;
+        const max = parseFloat(document.getElementById("maximo").value) || Infinity;
+        const moneda = document.getElementById("moneda").value;
+
+        const filtrados = productos.filter(p =>
+            p.currency === moneda &&
+            p.cost >= min &&
+            p.cost <= max
+        );
+
+        showItemCards(filtrados);
+        resultados.innerText = `Resultados: ${filtrados.length}`;
+    });
+
+    botonLimpiar.addEventListener("click", () => {
+        document.getElementById("minimo").value = "";
+        document.getElementById("maximo").value = "";
+        showItemCards(productos);
+        resultados.innerText = `Resultados: ${productos.length}`;
+    });
+});
+
+
+//*Orden de los productos*//
+let productos = [];
+let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`
+
+     fetchInfo(url).then(result => {
+        productos = result.products; 
+        showItemCards(productos);
+        resultados.innerText = `Resultados: ${productos.length}`;
+    });
+
+document.getElementById("filtro").addEventListener("change", (event) => {
+  const opcion = event.target.value;
+
+  if (opcion === "1") {
+    productos.sort((a, b) => b.soldCount - a.soldCount);
+  } else if (opcion === "2") {
+    productos.sort((a, b) => b.cost - a.cost);
+  } else if (opcion === "3") {
+    productos.sort((a, b) => a.cost - b.cost);
+  } else {
+    console.log("Orden por defecto");
+  }
+
+  showItemCards(productos);
+});
+
+const buscador = document.getElementById("buscador");
+
+buscador.addEventListener("input", () => {
+  const buscados = buscador.value.trim().toLowerCase();
+  const filtrados = productos.filter(p => 
+    p.name.toLowerCase().includes(buscados) ||
+    p.description.toLowerCase().includes(buscados)
+  );
+  showItemCards(filtrados);
+  document.getElementById("resultados").innerText = `Resultados:`;
+});
+>>>>>>> Stashed changes
