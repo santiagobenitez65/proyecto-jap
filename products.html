@@ -2,16 +2,16 @@
 <html lang="es">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>eMercado - Todo lo que busques está aquí</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/product-style.css" rel="stylesheet">
-  <link rel="stylesheet" href="css\filtro-precio.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/product-style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css\filtro-precio.css" />
 </head>
 
 <body>
@@ -39,38 +39,10 @@
     <p id="usuario-nav"></p>
   </nav>
   <main>
-
-    <div class="top-bar">
-      <div class="titulo-resultados">
-        <h2 id="titulo"></h2>
-        <p id="resultados"></p>
-      </div>
-
-      <div class="barra-filtro">
-        <div id="selector-de-precio">
-          <div class="fila">
-            <p><b>Precio</b></p>
-            <select id="moneda">
-              <option value="USD">USD</option>
-              <option value="UYU">UYU</option>
-            </select>
-          </div>
-
-          <div class="fila">
-            <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo">
-            <input class="precio" id="maximo" name="precioMax" placeholder="Máximo">
-          </div>
-
-          <div class="fila">
-            <button id="aplicar">Aplicar</button>
-            <button id="limpiar">Limpiar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="top-bar"></div>
 
     <div class="filtros-orden">
-      <p>Ordenar por </p>
+      <p>Ordenar por</p>
       <select id="filtro">
         <option value="">defecto</option>
         <option value="1">más relevantes</option>
@@ -78,45 +50,49 @@
         <option value="3">$ ascendente</option>
       </select>
     </div>
-    
+
     <div class="full-container">
+
       <div class="sidebar-container">
+        <div class="titulo-resultados">
+          <h2 id="titulo"></h2>
+          <p id="resultados"></p>
+        </div>
         <aside class="sidebar">
-          <div id="selector-de-marca">
-            <h4><b>Marca</b></h4>
-            <p class="selector-marca-modelo">Fiat</p>
-            <p class="selector-marca-modelo">Peugeot</p>
-            <p class="selector-marca-modelo">Bugatti</p>
-            <p class="selector-marca-modelo">Suzuki</p>
-            <p class="selector-marca-modelo">Chevrolet</p>
-          </div>
+          <div id="selector-de-precio">
+            <div class="fila">
+              <p><b>Precio</b></p>
+              <select id="moneda">
+                <option value="USD">USD</option>
+                <option value="UYU">UYU</option>
+              </select>
+            </div>
 
-          <br>
+            <div class="fila" id="entradas-precio">
+              <input class="precio" id="minimo" name="precioMin" placeholder="Mínimo" />
+              <input class="precio" id="maximo" name="precioMax" placeholder="Máximo" />
+            </div>
 
-          <div id="selector-de-modelo">
-            <h4><b>Modelo</b></h4>
-            <p class="selector-marca-modelo">Onix Joy</p>
-            <p class="selector-marca-modelo">Celerio</p>
-            <p class="selector-marca-modelo">Way</p>
-            <p class="selector-marca-modelo">208</p>
-            <p class="selector-marca-modelo">Chiron</p>
+            <div class="fila">
+              <button id="aplicar">Aplicar</button>
+              <button id="limpiar">Limpiar</button>
+            </div>
           </div>
         </aside>
       </div>
 
-      <div id="card-container">
-
-      </div>
+      <div id="card-container"></div>
     </div>
   </main>
-
 
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      <p>
+        Este sitio forma parte de
+        <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
       </p>
     </div>
   </footer>
