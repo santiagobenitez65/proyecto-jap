@@ -150,6 +150,15 @@ select {
     display: flex;
     flex-direction: column;
 }
+#buscador {
+    width: 100%; 
+    padding: 8px 12px;
+    border: 2px solid #FFB33A;
+    outline: none;
+    font-size: 0.9rem;
+    box-sizing: border-box; 
+    transition: 0.3s all;
+}
 
 /*El media query que maneja el responsive para celu*/
 @media (max-width: 480px) {
@@ -194,5 +203,9 @@ select {
 
     .sidebar * {
         margin: auto;
+    }
+
+    #buscador {
+        width: 100%;
     }
 }
