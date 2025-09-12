@@ -1,7 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  background: #D9D9D9;
+  padding: 1em;
 }
 
 body {
@@ -10,8 +17,14 @@ body {
   flex-direction: column;
 }
 
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
 footer {
-  margin-top: auto;
+  margin: 0;
   width: 100%;
   background: #D9D9D9;
   padding: 1em;
@@ -24,24 +37,271 @@ footer p {
   font-size: 14px;
 }
 
+#product-category {
+  padding: 1em;
+  margin-left: 5em;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+#left-div {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.nombre-categoria {
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+
 .carrusel {
-    background-color: aqua;
-    padding: 1em;
-    width: 60%;
-    height: 20em;
-    display: flex;
-    flex-flow: row nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.carrusel button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.carrusel button:hover {
+  transform: scale(1.2);
+}
+
+#product-image img {
+  max-width: 100%;
+  max-height: 25em;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 15px;
+}
+
+
+.galeria {
+
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.img-thumbnail {
+  padding: 0;
+  box-shadow: 4px 4px 8px;
+}
+
+.galeria img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+}
+
+.galeria img:hover {
+  border: 2px solid #ffb33a;
+}
+
+
+#right-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 20px black;
+  background-color: #ffffff;
+  height: auto;
+}
+
+#right-div h3 {
+  margin-bottom: ;
+}
+
+#comprar,
+#agr-carrito {
+  margin: 1em;
+  height: 3.5em;
+  width: 100%;
+  max-width: 15em;
+  border-radius: 10px;
+  border-style: none;
+  background: #ffb33a;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  margin-top: 1em;
+}
+
+#comprar:hover {
+  background-color: #e49a23;
+  cursor: pointer;
+}
+
+#agr-carrito:hover {
+  background-color: #21759c;
+}
+
+#comprar {
+  box-shadow: 0px 0px 30px #ffcb77;
+}
+
+#agr-carrito {
+  width: 10em;
+  background-color: #3090bd;
+  box-shadow: 0px 0px 20px #4eb4e4;
+}
+
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.casilla-info-compra {
+  margin-top: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.casilla-info-compra h3 {
+  position: relative;
+  bottom: 4em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.casilla-info-compra p {
+  margin-bottom: 1em;
+}
+
+.casilla-info-compra #product-description {
+  position: relative;
+  bottom: 2em;
+  margin: 0 3em 0 3em;
+}
+
+.casilla-info-compra hr {
+  width: 95%;
+  border-top: black ;
+}
+
+#product-price {
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin: 20px 0;
+}
+
+#product-soldcount {
+  font-size: 14px;
+  color: grey;
+  margin-top: 5px;
+}
+
+.logo {
+  padding: 0em 1em 0em 1em;
+}
+
+.companies p {
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin: 2em 0 0 0;
+}
+
+@media (min-width : 375px) and (max-width: 768px) {
+
+
+  #product-category {
+    margin-left: 1em;
+  }
+
+  #right-div {
+    font-size: x-large;
+  }
+
+  #product-name {
+    font-size: 48px;
+    margin-top: 1em;
+  }
+
+  #product-soldcount {
+    font-size: x-large;
+  }
+
+  #product-prize {
+    font-size: 40px;
+  }
+  footer p {
+    text-align: left;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #right-div {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .carrusel {
+    flex-direction: row;
+    margin-right: 10px;
+  }
+
+  .galeria {
     justify-content: center;
+  }
 }
 
-#product-image {
-    width: 60%;
-    background-color: red;
-}
+@media (max-width: 375px) {
 
-button {
-    width: 5em;
-    height: 20%;
-    position: relative;
-    top: 40%;
+  #product-category {
+    margin-left: 1em;
+  }
+
+  #product-name {
+    font-size: x-large;
+  }
+
+  #product-description{
+    font-size: large;
+  }
+
+  footer p {
+    text-align: left;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #right-div {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .carrusel {
+    flex-direction: row;
+    margin-right: 10px;
+  }
+
+  .galeria {
+    justify-content: center;
+  }
 }
