@@ -38,26 +38,46 @@
     <p id="usuario-nav"></p>
   </nav>
   <main>
-     <h2 id="product-name"></h2>
-  <p id="product-description"></p>
-  <p id="product-category"></p>
-  <p id="product-price"></p>
-  <p id="product-soldcount"></p>
 
-  <div class="carrusel">
-    <button id="ant">⟨</button>
-    <div id="product-image"></div>
-    <button id="sig">⟩</button>
-  </div>
+    <div id="left-div">
+      <h3 id="product-category"></h3>
+      <div class="nombre-categoria"></div>
+      <div class="carrusel">
+        <button id="ant">⟨</button>
+        <div id="product-image"></div>
+        <button id="sig">⟩</button>
+        
+      </div>
+      <div class="galeria d-flex flex-wrap" id="imageContainer"></div>
+    </div>
 
-  <div class="galeria d-flex flex-wrap" id="imageContainer"></div>
+    <div id="right-div">
+      <div class="casilla-info-compra">
+        <h3 id="product-name"></h3>
+        <p id="product-description"></p>
+        <p id="product-price"></p>
+        <hr></hr>
+        <p id="product-soldcount"></p>
+        <div class="botones">
+        <button id="comprar">COMPRAR</button>
+        <button id="agr-carrito">AÑADIR AL CARRITO</button>
+        <div class="companies">
+          <p>Metodos de pago</p>
+          <img src="img/visa.png" alt="logo de visa" class="logo">
+          <img src="img/mc_symbol_opt_45_1x.png" alt="logo mastercard"  class="logo">
+          <img src="img/paypal-48.png" alt="logo de paypal" class="logo">
+        </div>
+        </div>
+      </div>
+    </div>
+
+    
+
   </main>
   <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
+    <div class="container" style="margin: 0;">
+      <p style="text-align: left;">Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
