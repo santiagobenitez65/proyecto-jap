@@ -25,7 +25,7 @@ function showItemCards(arrayOfProducts) {
     for (let i = 0; i < arrayOfProducts.length; i++){    
         let product = arrayOfProducts[i];
         htmlToAppend += `
-            <div class="card-box">
+            <div class="card-box" data-id="${product.id}" style="cursor: pointer">
                 <img class="product-image" src="` + product.image + `" alt="Imagen de un auto">
                 <h4>` + product.name + `</h6>
                 <p class="descripcion">` + product.description + `</p>
@@ -39,7 +39,22 @@ function showItemCards(arrayOfProducts) {
         `
     }
     container.innerHTML = htmlToAppend;
+
+  document.querySelectorAll(".card-box").forEach(item => {
+        item.addEventListener("click", () => {
+            const productId = item.getAttribute("data-id");
+            localStorage.setItem("selectedProductId", productId);
+           
+            if (event.target.classList.contains("corazon")) {
+                return;
+            }
+           
+            window.location.href = "product-info.html";
+        });
+    });
 }
+
+
 
 function toggleHeartSelection(id) {
     const heart = document.getElementById(id);
@@ -51,13 +66,16 @@ function toggleHeartSelection(id) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    const titulo = document.getElementById("titulo")
     const resultados = document.getElementById("resultados")
-    fetchInfo("https://japceibal.github.io/emercado-api/cats_products/101.json").then(result => {
-        let productos = result.products;
+    let url = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`
+    fetchInfo(url).then(result => {
+        console.log(result)
+        let productos = result.products; //ordenar esta lista antes de darsela a showItemCards()
         showItemCards(productos);
+        titulo.innerText = result.catName; 
         resultados.innerText = `Resultados: ${productos.length}` 
     })
-    
 })
 
 
@@ -79,8 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
     botonAplicar.addEventListener("click", () => {
         const min = parseFloat(document.getElementById("minimo").value) || 0;
         const max = parseFloat(document.getElementById("maximo").value) || Infinity;
+        const moneda = document.getElementById("moneda").value;
 
         const filtrados = productos.filter(p =>
+            p.currency === moneda &&
             p.cost >= min &&
             p.cost <= max
         );
@@ -124,16 +144,4 @@ document.getElementById("filtro").addEventListener("change", (event) => {
   showItemCards(productos);
 });
 
-const buscador = document.getElementById("buscador");
-
-//Buscador//
-buscador.addEventListener("input", () => {
-  const buscados = buscador.value.trim().toLowerCase();
-  const filtrados = productos.filter(p => 
-    p.name.toLowerCase().includes(buscados) ||
-    p.description.toLowerCase().includes(buscados)
-  );
-  showItemCards(filtrados);
-  document.getElementById("resultados").innerText = `Resultados:`;
-});
 
