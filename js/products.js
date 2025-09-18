@@ -143,9 +143,8 @@ document.getElementById("filtro").addEventListener("change", (event) => {
 });
 
 
-//cambios//
 //Buscador//
-buscador.addEventListener("input", () => {
+document.getElementById("buscador").addEventListener("input", () => {
   const buscados = buscador.value.trim().toLowerCase();
   const filtrados = productos.filter(p => 
     p.name.toLowerCase().includes(buscados) ||
