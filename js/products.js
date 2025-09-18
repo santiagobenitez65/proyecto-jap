@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const max = parseFloat(document.getElementById("maximo").value) || Infinity;
 
         const filtrados = productos.filter(p =>
-            p.currency === moneda &&
             p.cost >= min &&
             p.cost <= max
         );
