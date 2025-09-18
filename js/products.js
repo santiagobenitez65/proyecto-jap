@@ -144,3 +144,13 @@ document.getElementById("filtro").addEventListener("change", (event) => {
 
 
 //cambios//
+//Buscador//
+buscador.addEventListener("input", () => {
+  const buscados = buscador.value.trim().toLowerCase();
+  const filtrados = productos.filter(p => 
+    p.name.toLowerCase().includes(buscados) ||
+    p.description.toLowerCase().includes(buscados)
+  );
+  showItemCards(filtrados);
+  document.getElementById("resultados").innerText = `Resultados:`;
+});
