@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function() {
     botonAplicar.addEventListener("click", () => {
         const min = parseFloat(document.getElementById("minimo").value) || 0;
         const max = parseFloat(document.getElementById("maximo").value) || Infinity;
-        const moneda = document.getElementById("moneda").value;
 
         const filtrados = productos.filter(p =>
             p.currency === moneda &&
