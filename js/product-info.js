@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () { 
     let productID = localStorage.getItem("selectedProductId");
     let URL = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
+    let COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`;
+
 
     let images = [];
     let currentIndex = 0;
@@ -53,4 +55,30 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch(error => console.error("Error al cargar info del producto:", error));
+
+        function showComments(commentsArray) {
+    let htmlContent = "";
+
+    for (let comment of commentsArray) {
+        let estrellas = "★".repeat(comment.score) + "☆".repeat(5 - comment.score);
+
+        htmlContent += `
+          <div class="comentario">
+            <p><strong>${comment.user}</strong> - <span class="fecha">${comment.dateTime}</span></p>
+            <p class="texto">${comment.description}</p>
+            <div class="estrellas">${estrellas}</div>
+          </div>
+        `;
+    }
+
+    document.getElementById("lista-comentarios").innerHTML = htmlContent;
+}
+
+fetch(COMMENTS_URL)
+    .then(response => response.json())
+    .then(data => {
+        showComments(data);
+    })
+    .catch(error => console.error("Error al cargar comentarios:", error));
+
 });
