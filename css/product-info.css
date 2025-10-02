@@ -305,3 +305,36 @@ footer p {
     justify-content: center;
   }
 }
+
+#dejar-comentario {
+  width: 100%;
+  margin: 1em 1em 1em 1em;
+  padding: 1em;
+  background-color: #e7e6e6;
+  border: 1px solid #ffb33a;
+  border-radius: 5px; 
+  height: auto;
+}
+
+#titulo-com {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+#escribir-comentario input {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  margin-top: 0.5em; 
+  margin-bottom: 0.5em; 
+}
+
+#publicar-comentario {
+  background-color: #ffb33a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.2em 0.2em;
+}
