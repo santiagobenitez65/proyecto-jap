@@ -115,7 +115,13 @@ document.getElementById("publicar-comentario").addEventListener("click", () => {
     newComment.score = rating;
     newComment.description = document.getElementById("input-comentario").value;
     newComment.user = sessionStorage.getItem("usuario");
-    newComment.dateTime = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDay()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+    let day;
+    let month;
+
+    if (currentDate.getDate() < 10) day = `0${currentDate.getDate()}`; else day = currentDate.getDate();
+    if (currentDate.getMonth() + 1 < 10) month = `0${currentDate.getMonth() + 1}`; else month = currentDate.getMonth() + 1;
+
+    newComment.dateTime = `${currentDate.getFullYear()}-${month}-${day} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
     comments.push(newComment);
     showComments(comments);
     setRating(0)
