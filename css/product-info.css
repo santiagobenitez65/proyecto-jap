@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+
 footer {
   margin-top: auto;
   width: 100%;
@@ -195,7 +196,7 @@ footer p {
 
 .casilla-info-compra hr {
   width: 95%;
-  border-top: black;
+  border-top: black ;
 }
 
 #product-price {
@@ -222,6 +223,37 @@ footer p {
   margin: 2em 0 0 0;
 }
 
+.related {
+  margin: 2em;
+}
+
+.related-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.related-container p {
+  font-weight: bolder;
+  letter-spacing: 0.2em;
+}
+
+.related-item {
+  margin: 1em;
+  width: 20em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.related-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+
+.related-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
 @media (min-width : 375px) and (max-width: 768px) {
 
 
@@ -245,7 +277,6 @@ footer p {
   #product-prize {
     font-size: 40px;
   }
-
   footer p {
     text-align: left;
   }
@@ -279,7 +310,7 @@ footer p {
     font-size: x-large;
   }
 
-  #product-description {
+  #product-description{
     font-size: large;
   }
 
@@ -304,36 +335,4 @@ footer p {
   .galeria {
     justify-content: center;
   }
-}
-
-#dejar-comentario {
-  margin: 3em 2em 2em 2em;
-  padding: 1em;
-  background-color: #e7e6e6;
-  border: 1px solid #ffb33a;
-  border-radius: 5px;
-  height: auto;
-}
-
-#titulo-com {
-  text-align: center;
-  margin-bottom: 0.5em;
-}
-
-#escribir-comentario input {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-#publicar-comentario {
-  background-color: #ffb33a;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 0.2em 0.2em;
 }
