@@ -223,6 +223,37 @@ footer p {
   margin: 2em 0 0 0;
 }
 
+.related {
+  margin: 2em;
+}
+
+.related-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.related-container p {
+  font-weight: bolder;
+  letter-spacing: 0.2em;
+}
+
+.related-item {
+  margin: 1em;
+  width: 20em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.related-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+
+.related-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
 #calificaciones {
   grid-column: 1 / -1;
   margin: 3em auto;
@@ -346,7 +377,7 @@ footer p {
   }
 
   footer p {
-    text-align: left;
+    font-size: 8px;
   }
 
   main {

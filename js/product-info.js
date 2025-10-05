@@ -1,8 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () { 
+document.addEventListener("DOMContentLoaded", function () {
     let productID = localStorage.getItem("selectedProductId");
     let URL = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
-    let COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`;
-
 
     let images = [];
     let currentIndex = 0;
@@ -16,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("product-price").textContent = `${data.currency} ${data.cost}`;
             document.getElementById("product-soldcount").innerHTML = `Vendidos: ${data.soldCount}`;
 
+
             images = data.images;
             const imageContainer = document.getElementById("imageContainer");
             const mainImage = document.getElementById("product-image");
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             images.forEach((imgSrc, index) => {
                 const img = document.createElement("img");
                 img.src = imgSrc;
-                img.classList.add("img-thumbnail", );
+                img.classList.add("img-thumbnail",);
                 img.style.width = "120px";
                 img.style.cursor = "pointer";
 
@@ -53,32 +52,27 @@ document.addEventListener("DOMContentLoaded", function () {
             function showImage() {
                 mainImage.innerHTML = `<img src="${images[currentIndex]}" class="img-fluid">`;
             }
+
+            const relatedContainer = document.getElementById("relatedProducts");
+            relatedContainer.innerHTML = "";
+
+            data.relatedProducts.forEach(item => {
+                const card = document.createElement("div");
+                card.classList.add("related-item");
+
+                card.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="related-img">
+                <p>${item.name}</p>
+            `;
+
+                card.addEventListener("click", () => {
+                    localStorage.setItem("selectedProductId", item.id);
+                    window.location = "product-info.html";
+                });
+
+                relatedContainer.appendChild(card);
+            });
+
         })
         .catch(error => console.error("Error al cargar info del producto:", error));
-
-        function showComments(commentsArray) {
-    let htmlContent = "";
-
-    for (let comment of commentsArray) {
-        let estrellas = "★".repeat(comment.score) + "☆".repeat(5 - comment.score);
-
-        htmlContent += `
-          <div class="comentario">
-            <p><strong>${comment.user}</strong> - <span class="fecha">${comment.dateTime}</span></p>
-            <p class="texto">${comment.description}</p>
-            <div class="estrellas">${estrellas}</div>
-          </div>
-        `;
-    }
-
-    document.getElementById("lista-comentarios").innerHTML = htmlContent;
-}
-
-fetch(COMMENTS_URL)
-    .then(response => response.json())
-    .then(data => {
-        showComments(data);
-    })
-    .catch(error => console.error("Error al cargar comentarios:", error));
-
 });
