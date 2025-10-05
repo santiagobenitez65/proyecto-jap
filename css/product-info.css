@@ -419,6 +419,29 @@ footer p {
   height: auto;
 }
 
+#titulo-com {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+#escribir-comentario input {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  margin-top: 0.5em; 
+  margin-bottom: 0.5em; 
+}
+
+#publicar-comentario {
+  background-color: #ffb33a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.2em 0.2em;
+}
+
   .comentario {
     padding: 0.8em;
   }
