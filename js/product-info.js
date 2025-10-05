@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let productID = localStorage.getItem("selectedProductId");
     let URL = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
+    let COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`;
 
     let images = [];
     let currentIndex = 0;
