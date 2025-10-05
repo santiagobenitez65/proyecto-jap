@@ -46,7 +46,7 @@
         <button id="ant">⟨</button>
         <div id="product-image"></div>
         <button id="sig">⟩</button>
-        
+
       </div>
       <div class="galeria d-flex flex-wrap" id="imageContainer">
 
@@ -58,57 +58,85 @@
         <h3 id="product-name"></h3>
         <p id="product-description"></p>
         <p id="product-price"></p>
-        <hr></hr>
+        <hr>
+        </hr>
         <p id="product-soldcount"></p>
         <div class="botones">
-        <button id="comprar">COMPRAR</button>
-        <button id="agr-carrito">AÑADIR AL CARRITO</button>
-        <div class="companies">
-          <p>Metodos de pago</p>
-          <img src="img/visa.png" alt="logo de visa" class="logo">
-          <img src="img/mc_symbol_opt_45_1x.png" alt="logo mastercard"  class="logo">
-          <img src="img/paypal-48.png" alt="logo de paypal" class="logo">
-        </div>
+          <button id="comprar">COMPRAR</button>
+          <button id="agr-carrito">AÑADIR AL CARRITO</button>
+          <div class="companies">
+            <p>Metodos de pago</p>
+            <img src="img/visa.png" alt="logo de visa" class="logo">
+            <img src="img/mc_symbol_opt_45_1x.png" alt="logo mastercard" class="logo">
+            <img src="img/paypal-48.png" alt="logo de paypal" class="logo">
+          </div>
         </div>
       </div>
     </div>
 
-      <div class="related">
-        <h4>Productos relacionados</h4>
-        <div id="relatedProducts" class="related-container"></div>
-      </div>
-    
+    <div class="related">
+      <h4>Productos relacionados</h4>
+      <div id="relatedProducts" class="related-container"></div>
+    </div>
+
 
   </main>
 
-<section id="calificaciones" class="mt-4">
-  <h3>Calificaciones</h3>
+  <section id="calificaciones" class="mt-4">
+    <h3>Calificaciones</h3>
 
-  <div id="calificacion-form">
-    <h5>Deja tu calificación</h5>
+    <div id="dejar-comentario">
+      <h5 id="titulo-com">Deja tu calificación</h5>
 
-    <div id="estrellas">
-      <span data-value="1">★</span>
-      <span data-value="2">★</span>
-      <span data-value="3">★</span>
-      <span data-value="4">★</span>
-      <span data-value="5">★</span>
+      <div id="estrellas">
+        <svg id="rating-1" onclick="setRating(1)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+          <path
+            d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+        </svg>
+
+        <svg id="rating-2" onclick="setRating(2)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+          <path
+            d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+        </svg>
+
+        <svg id="rating-3" onclick="setRating(3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+          <path
+            d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+        </svg>
+
+        <svg id="rating-4" onclick="setRating(4)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+          <path
+            d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+        </svg>
+
+        <svg id="rating-5" onclick="setRating(5)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+          <path
+            d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+        </svg>
+      </div>
+
+      <div id="escribir-comentario">
+        <input id="input-comentario" type="text" placeholder="Escribe aquí tu comentario">
+      </div>
+
+      <button id="publicar-comentario">Publicar</button>
     </div>
 
-    <textarea id="comentario" placeholder="Escribe tu comentario..." rows="3"></textarea>
-    
-    <button id="publicar-comentario">Publicar</button>
-  </div>
+    <hr>
+    <!-- Lista de comentarios-->
+    <div id="lista-comentarios">
+    </div>
 
-  <hr>
-  <!-- Lista de comentarios-->
-  <div id="lista-comentarios">
-  </div>
-  
-</section>
+  </section>
   <footer class="text-muted">
     <div class="container" style="margin: 0;">
-      <p style="text-align: left;">Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      <p style="text-align: left;">Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/"
+          target="_blank">Jovenes a Programar</a>
       </p>
     </div>
   </footer>
