@@ -274,13 +274,22 @@ footer p {
 
 @media (min-width : 375px) and (max-width: 768px) {
 
-
+  #left-div {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-shadow: none;
+  }
+  
   #product-category {
     margin-left: 1em;
   }
 
   #right-div {
     font-size: x-large;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 10px;
   }
 
   #product-name {
@@ -303,10 +312,7 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  #right-div {
-    margin-top: 20px;
-    text-align: center;
-  }
+  
 
   .carrusel {
     flex-direction: row;
@@ -416,3 +422,4 @@ footer p {
   }
 
 }
+
