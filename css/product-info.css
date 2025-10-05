@@ -410,9 +410,14 @@ footer p {
     padding: 1em;
   }
 
-  #calificaciones h3 {
-    font-size: 18px;
-  }
+#dejar-comentario {
+  margin: 3em 2em 2em 2em;
+  padding: 1em;
+  background-color: #e7e6e6;
+  border: 1px solid #ffb33a;
+  border-radius: 5px; 
+  height: auto;
+}
 
   .comentario {
     padding: 0.8em;
