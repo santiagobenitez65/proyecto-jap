@@ -77,6 +77,13 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error al cargar info del producto:", error));
 /*comentarios*/
+    fetch(COMMENTS_URL)
+        .then(response => response.json())
+        .then(data => {
+            showComments(data);
+        })
+        .catch(error => console.error("Error al cargar comentarios:", error));
+
         function showComments(commentsArray) {
     let htmlContent = "";
 
