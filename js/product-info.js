@@ -128,6 +128,10 @@ function setRating(number) {
     }
 }
 
+function formatTime(time) {
+    if (time < 10) return `0${time}`; else return time;
+}
+
 document.getElementById("publicar-comentario").addEventListener("click", () => {
     //el if es para que no se agregue un comentario al que lke falte rating o texto
     if (rating == 0 || document.getElementById("input-comentario").value == "") return;
@@ -137,16 +141,11 @@ document.getElementById("publicar-comentario").addEventListener("click", () => {
     newComment.score = rating;
     newComment.description = document.getElementById("input-comentario").value;
     newComment.user = sessionStorage.getItem("usuario");
-    let day;
-    let month;
-
-    if (currentDate.getDate() < 10) day = `0${currentDate.getDate()}`; else day = currentDate.getDate();
-    if (currentDate.getMonth() + 1 < 10) month = `0${currentDate.getMonth() + 1}`; else month = currentDate.getMonth() + 1;
-
-    newComment.dateTime = `${currentDate.getFullYear()}-${month}-${day} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+    newComment.dateTime = `${currentDate.getFullYear()}-${formatTime(currentDate.getMonth() + 1)}-${formatTime(currentDate.getDate())} ${formatTime(currentDate.getHours())}:${formatTime(currentDate.getMinutes())}:${formatTime(currentDate.getSeconds())}`;
     comments.push(newComment);
     showComments(comments);
     setRating(0)
     document.getElementById("input-comentario").value = "";
 
 })
+
