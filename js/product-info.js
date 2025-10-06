@@ -1,4 +1,6 @@
 let comments;
+let rating = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     let productID = localStorage.getItem("selectedProductId");
     let URL = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
@@ -146,4 +148,5 @@ document.getElementById("publicar-comentario").addEventListener("click", () => {
     showComments(comments);
     setRating(0)
     document.getElementById("input-comentario").value = "";
+
 })
