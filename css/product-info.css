@@ -305,7 +305,8 @@ footer p {
 }
 
 #estrellas svg {
-  cursor: pointer; 
+  cursor: pointer;
+  color: #ffb33a;
 }
 
 
@@ -454,5 +455,6 @@ footer p {
   }
 
 }
+
 
 
