@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (nameGuardado && lastnameGuardado && mailGuardado && passwordGuardada){
     window.location.herf = "index.html";
+    return;
   }
 
   loginButton.addEventListener("click", () => {
