@@ -42,7 +42,7 @@ let getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", () => {
   const userNav = document.getElementById("usuario-nav");
   if (userNav) {
-    const usuario = sessionStorage.getItem("usuario");
+    const usuario = sessionStorage.getItem("name");
     userNav.textContent = usuario;
   }
 });
