@@ -1,0 +1,17 @@
+body {
+    min-height: 100vh;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: var(--secondary-bg-color);
+}
+
+footer {
+    background-color: #212529;
+
+}
