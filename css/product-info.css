@@ -15,6 +15,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
 }
 
 main {
@@ -50,6 +52,7 @@ footer p {
   height: auto;
   box-shadow: inset -5px -5px 10px grey;
   border-bottom-right-radius: 8px;
+  background-color: var(--secondary-bg-color);
 }
 
 .nombre-categoria {
@@ -110,7 +113,7 @@ footer p {
 }
 
 .galeria img:hover {
-  border: 2px solid #ffb33a;
+  border: 2px solid var(--main-color);
 }
 
 
@@ -119,7 +122,7 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--main-bg-color);
   height: auto;
 }
 
@@ -135,8 +138,8 @@ footer p {
   max-width: 15em;
   border-radius: 10px;
   border-style: none;
-  background: #ffb33a;
-  color: white;
+  background: var(--main-color);
+  color: var(--main-bg-color);
   font-weight: bold;
   letter-spacing: 0.2em;
   margin-top: 1em;
@@ -276,7 +279,7 @@ footer p {
   margin: 3em 2em 2em 2em;
   padding: 1em;
   background-color: #e7e6e6;
-  border: 1px solid #ffb33a;
+  border: 1px solid var(--main-color);
   border-radius: 5px; 
   height: auto;
 }
@@ -297,8 +300,8 @@ footer p {
 }
 
 #publicar-comentario {
-  background-color: #ffb33a;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--main-bg-color);
   border: none;
   border-radius: 5px;
   padding: 0.2em 0.2em;
@@ -377,7 +380,7 @@ footer p {
 }
 
 .comentario {
-  background: #fff;
+  background: var(--main-bg-color);
   padding: 1em 1.5em;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
@@ -402,7 +405,7 @@ footer p {
 .comentario .estrellas {
   margin-top: 0.5em;
   font-size: 18px;
-  color: #ffb33a;
+  color: var(--main-color);
 }
 
 @media (max-width: 375px) {

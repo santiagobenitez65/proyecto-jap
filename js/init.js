@@ -45,4 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuario = sessionStorage.getItem("name");
     userNav.textContent = usuario;
   }
+
+  if(localStorage.getItem("tema") === "Oscuro") {
+    document.documentElement.style.setProperty("--main-bg-color", "#192229");
+    document.documentElement.style.setProperty("--secondary-bg-color", "#212E36");
+    document.documentElement.style.setProperty("--text-color", "#C8CDD0");
+  }
+  
 });
+
+document.getElementById("usuario-nav").addEventListener("click", () => {
+  window.location.href = "my-profile.html";
+})
