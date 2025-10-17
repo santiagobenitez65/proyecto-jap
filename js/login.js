@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const passwordGuardada = sessionStorage.getItem("password");
 
   if (nameGuardado && lastnameGuardado && mailGuardado && passwordGuardada){
-    window.location.herf = "index.html";
+    window.location.href = "index.html";
     return;
   }
 
