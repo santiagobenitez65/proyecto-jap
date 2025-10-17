@@ -11,15 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
-   
-    const nameGuardado = sessionStorage.getItem("name");
-    const lastnameGuardado = sessionStorage.getItem("lastname");
-    const mailGuardado = sessionStorage.getItem("mail");
-    const passwordGuardada = sessionStorage.getItem("password");
-
-    if (!mailGuardado || !passwordGuardada || !lastnameGuardado || !nameGuardado) {
-        window.location.href = "login.html";
-    }
     
     const usuario = sessionStorage.getItem("name");
     console.log(usuario);
