@@ -33,33 +33,15 @@ function updateData() {
     const newEmail = sectionEmail.value;
     const newPhone = sectionTelefono.value.trim();
 
-    if (!sectionEmail.checkValidity()) {
-      alert("Ingrese un correo electrónico válido.");
-    }
+   if (newEmail !== "" && !sectionEmail.checkValidity()) {
+    alert("Ingrese un correo electrónico válido.");
+    return;
+  }
 
-    if (newName !== "") {
-        sessionStorage.setItem("name", newName) 
-    } else {
-        return;
-    }
-
-    if (newLastname !== "") {
-        sessionStorage.setItem("lastname", newLastname) 
-    } else {
-        return;
-    }
-
-    if (newEmail !== "") {
-        sessionStorage.setItem("mail", newEmail) 
-    } else {
-        return;
-    }
-
-    if (newPhone !== "") {
-        sessionStorage.setItem("phone", newPhone) 
-    } else {
-        return;
-    }
+  if (newName !== "") sessionStorage.setItem("name", newName);
+  if (newLastname !== "") sessionStorage.setItem("lastname", newLastname);
+  if (newEmail !== "") sessionStorage.setItem("mail", newEmail);
+  if (newPhone !== "") sessionStorage.setItem("phone", newPhone);
 
 };
 
@@ -78,4 +60,33 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location = "index.html";
     });
 
+});
+
+const profilePic = document.getElementById("profile-pic");
+
+const fileInput = document.createElement("input");
+fileInput.type = "file";
+fileInput.accept = "image/*";
+
+fileInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+            profilePic.src = reader.result;
+            sessionStorage.setItem("profilePic", reader.result);
+            };
+        reader.readAsDataURL(file);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedPic = sessionStorage.getItem("profilePic");
+    if (savedPic) {
+        profilePic.src = savedPic;
+    }
+});
+
+profilePic.addEventListener("click", () => {
+    fileInput.click();
 });
