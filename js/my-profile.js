@@ -9,6 +9,12 @@ const sectionApellido = document.getElementById("d-lastname")
 const sectionEmail = document.getElementById("d-email")
 const sectionTelefono = document.getElementById("d-phone")
 
+const savedPic = sessionStorage.getItem("profilePic");
+    if(savedPic){
+        document.getElementById("profile-pic").src = savedPic;
+    }
+
+
 function displayData() {
     sectionNombre.innerText = nombre;
     sectionApellido.innerText = apellido;
