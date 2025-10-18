@@ -1,3 +1,13 @@
+:root {
+  --main-color: #ffb33a;
+  --main-bg-color: #ffffff;
+  --secondary-bg-color: #F4F3F3;
+  --text-color: #212529;
+  --card-border: #B5B5B5;
+  --box-color: #bbbbbb;
+  --mattress: #EBEBEB;
+}
+
 .jumbotron,
 .card-body,
 .container,
