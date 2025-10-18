@@ -8,29 +8,14 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
+  <link href="css/my-profile.css" rel="stylesheet">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarNav" aria-expanded="false" aria-p="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -44,24 +29,78 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item"></li>
+          <li class="nav-link" id="go-back" style="cursor: pointer;">Volver a Inicio</li>
         </ul>
       </div>
     </div>
-    <p id="usuario-nav"></p>
   </nav>
   <main>
-    <select onchange="getTema()" name="theme" id="theme">
-      <option value="Claro">Claro</option>
-      <option value="Oscuro">Oscuro</option>
-    </select>
+
+    <div class="mattress">
+      <div class="left-container">
+        <div class="title">
+          <h2>Mi Perfil </h2>
+        </div>
+        <div class="image">
+          <img src="img/img_perfil.png" alt="profile picture">
+        </div>
+
+        <div class="theme-container">
+          <div class="theme-title">
+            <h3>Tema</h3>
+          </div>
+          <p>sol/luna</p>
+          <div></div>
+        </div>
+        <div id="update-profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
+            viewBox="0 0 16 16">
+            <path style="color: white;"
+              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+            <path fill-rule="evenodd" style="color: white;"
+              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+          </svg>
+          <p></p>Actualizar Perfil</p>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="hover-container">
+          <label>Nombre</label>
+          <div class="info-container">
+            <section id="d-name"></section>
+          </div>
+        </div>
+        <div class="hover-container">
+          <label>Apellido</label>
+          <div class="info-container">
+            <section id="d-lastname"></section>
+          </div>
+        </div>
+        <div class="hover-container">
+          <label>Email</label>
+          <div class="info-container">
+            <section id="d-email"></section>
+          </div>
+        </div>
+        <div class="hover-container">
+          <label>Teléfono</label>
+          <div class="info-container">
+            <section id="d-phone"></section>
+          </div>
+        </div>
+        <div id="log-out">
+          </p>
+          <p style="color: white;">Cerrar Sesión</p>
+        </div>
+      </div>
+    </div>
+
   </main>
   <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
+    <div class="container" style="margin: 0;">
+      <p style="text-align: left;">Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/"
+          target="_blank">Jovenes a Programar</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
