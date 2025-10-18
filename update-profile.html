@@ -9,6 +9,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/my-profile.css" rel="stylesheet">
+  <link href="css/update-profile.css" rel="stylesheet">
 </head>
 
 <body>
@@ -65,32 +66,31 @@
       </div>
       <div class="right-container">
         <div class="hover-container">
-          <label>Nombre</label>
+          <label>Nombre elegido</label>
           <div class="info-container">
-            <section id="d-name"></section>
+            <input type="text" id="i-name" name="Nombre">
           </div>
         </div>
         <div class="hover-container">
-          <label>Apellido</label>
+          <label>Apellido elegido</label>
           <div class="info-container">
-            <section id="d-lastname"></section>
+            <input type="text" id="i-lastname" name="Apellido">
           </div>
         </div>
         <div class="hover-container">
-          <label>Email</label>
+          <label>Email elegido</label>
           <div class="info-container">
-            <section id="d-email"></section>
+            <input type="email" id="i-email" name="Correo">
           </div>
         </div>
         <div class="hover-container">
-          <label>Teléfono</label>
+          <label>Teléfono elegido</label>
           <div class="info-container">
-            <section id="d-phone"></section>
+            <input id="i-phone" name="i-telNo" type="tel" />
           </div>
         </div>
-        <div id="log-out">
-          </p>
-          <p style="color: white;">Cerrar Sesión</p>
+        <div id="confirm">
+          <p style="color: white;">Confirmar Cambios</p>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+  <script src="js/update-profile.js"></script>
 </body>
 
 </html>
