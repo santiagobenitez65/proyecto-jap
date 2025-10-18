@@ -50,7 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.setProperty("--main-bg-color", "#192229");
     document.documentElement.style.setProperty("--secondary-bg-color", "#212E36");
     document.documentElement.style.setProperty("--text-color", "#C8CDD0");
-    document.documentElement.style.setProperty("--card-border", "#2A3B47")
+    document.documentElement.style.setProperty("--card-border", "#2A3B47");
+    document.documentElement.style.setProperty("--box-color", "#2A3B47");
+    document.documentElement.style.setProperty("--mattress", "#212E36");
+
+  } else {
+    document.documentElement.style.setProperty("--main-bg-color", "#ffffff");
+    document.documentElement.style.setProperty("--secondary-bg-color", "#F4F3F3");
+    document.documentElement.style.setProperty("--text-color", "#212529");
+    document.documentElement.style.setProperty("--card-border", "#B5B5B5");
+    document.documentElement.style.setProperty("--box-color", "#bbbbbb");
+    document.documentElement.style.setProperty("--mattress", "#EBEBEB");
   }
 
 });
