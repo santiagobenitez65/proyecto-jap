@@ -64,5 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location = "index.html";
     });
 
+    const savedPic = sessionStorage.getItem("profilePic");
+    if (savedPic) {
+        profilePic.src = savedPic;
+    }
 });
 
