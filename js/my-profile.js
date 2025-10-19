@@ -64,11 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location = "index.html";
     });
 
-    const savedPic = sessionStorage.getItem("profilePic");
+    const savedPic = localStorage.getItem("profilePic");
     const profilePic = document.getElementById("profile-pic");
     if (savedPic) {
         profilePic.src = savedPic;
     }
 });
+
 
 
