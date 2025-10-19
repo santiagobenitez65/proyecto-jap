@@ -65,8 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const savedPic = sessionStorage.getItem("profilePic");
+    const profilePic = document.getElementById("profile-pic");
     if (savedPic) {
         profilePic.src = savedPic;
     }
 });
+
 
