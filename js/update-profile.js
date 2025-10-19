@@ -81,7 +81,7 @@ fileInput.addEventListener("change", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedPic = sessionStorage.getItem("profilePic");
+    const savedPic = localStorage.getItem("profilePic");
     if (savedPic) {
         profilePic.src = savedPic;
     }
