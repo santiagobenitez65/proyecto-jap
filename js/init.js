@@ -42,8 +42,11 @@ let getJSONData = function (url) {
 document.addEventListener("DOMContentLoaded", () => {
   const userNav = document.getElementById("usuario-nav");
   if (userNav) {
-    const usuario = sessionStorage.getItem("name");
+    const usuario = localStorage.getItem("name");
     userNav.textContent = usuario;
+    userNav.addEventListener("click", () => {
+      window.location.href = "my-profile.html";
+    })
   }
 
   if (localStorage.getItem("tema") === "Oscuro") {
@@ -64,7 +67,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
-
-document.getElementById("usuario-nav").addEventListener("click", () => {
-  window.location.href = "my-profile.html";
-})

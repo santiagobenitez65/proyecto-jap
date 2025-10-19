@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mailGuardado = sessionStorage.getItem("mail");
   const passwordGuardada = sessionStorage.getItem("password");
 
-  if (nameGuardado && lastnameGuardado && mailGuardado && passwordGuardada){
+  if (nameGuardado && lastnameGuardado && mailGuardado && passwordGuardada) {
     window.location.href = "index.html";
     return;
   }
@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    sessionStorage.setItem("lastname", lastname);
-    sessionStorage.setItem("name", name);
-    sessionStorage.setItem("mail", email);
-    sessionStorage.setItem("password", password);
+    localStorage.setItem("lastname", lastname);
+    localStorage.setItem("name", name);
+    localStorage.setItem("mail", email);
+    localStorage.setItem("password", password);
 
     window.location.href = "index.html";
   });

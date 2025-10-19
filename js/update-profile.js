@@ -1,8 +1,8 @@
 /* Datos */
-const nombre = sessionStorage.getItem("name")
-const apellido = sessionStorage.getItem("lastname")
-const email = sessionStorage.getItem("mail")
-const telefono = sessionStorage.getItem("phone")
+const nombre = localStorage.getItem("name")
+const apellido = localStorage.getItem("lastname")
+const email = localStorage.getItem("mail")
+const telefono = localStorage.getItem("phone")
 
 /* Estos son los input */
 const sectionNombre = document.getElementById("i-name")
@@ -23,7 +23,7 @@ function displayPlaceholder() {
     if (sessionStorage.getItem("phone") !== "") {
         sectionTelefono.placeholder = `  ${telefono}`
     } else {
-        sectionTelefono. placeholder = "  Ingrese número"
+        sectionTelefono.placeholder = "  Ingrese número"
     }
 };
 
@@ -33,15 +33,15 @@ function updateData() {
     const newEmail = sectionEmail.value;
     const newPhone = sectionTelefono.value.trim();
 
-   if (newEmail !== "" && !sectionEmail.checkValidity()) {
-    alert("Ingrese un correo electrónico válido.");
-    return;
-  }
+    if (newEmail !== "" && !sectionEmail.checkValidity()) {
+        alert("Ingrese un correo electrónico válido.");
+        return;
+    }
 
-  if (newName !== "") sessionStorage.setItem("name", newName);
-  if (newLastname !== "") sessionStorage.setItem("lastname", newLastname);
-  if (newEmail !== "") sessionStorage.setItem("mail", newEmail);
-  if (newPhone !== "") sessionStorage.setItem("phone", newPhone);
+    if (newName !== "") sessionStorage.setItem("name", newName);
+    if (newLastname !== "") sessionStorage.setItem("lastname", newLastname);
+    if (newEmail !== "") sessionStorage.setItem("mail", newEmail);
+    if (newPhone !== "") sessionStorage.setItem("phone", newPhone);
 
 };
 
@@ -75,7 +75,7 @@ fileInput.addEventListener("change", (event) => {
         reader.onload = () => {
             profilePic.src = reader.result;
             localStorage.setItem("profilePic", reader.result);
-            };
+        };
         reader.readAsDataURL(file);
     }
 });
