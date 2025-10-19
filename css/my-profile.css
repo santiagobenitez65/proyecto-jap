@@ -71,6 +71,16 @@ img {
     align-items: center;
 }
 
+.title {
+    margin-right: 1em;
+}
+
+.label-photo {
+    margin-bottom: 3em;
+    margin-right: 3.4em;
+    text-align: left;
+}
+
 #update-profile {
     display: flex;
     justify-content: center;
@@ -100,6 +110,7 @@ img {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -107,12 +118,17 @@ img {
     margin-bottom: 4em;
 }
 
+.theme-icon {
+    margin-bottom: 2em;
+    margin-left: 1em;
+}
+
 .theme-title h3 {
     margin-top: 0.5em;
 }
 
 .info-container {
-    border: 1px solid black;
+    border: 1px solid var(--text-color);
     padding: 1.3em;
     width: 15em;
     border-radius: 10px;
