@@ -74,7 +74,7 @@ fileInput.addEventListener("change", (event) => {
         const reader = new FileReader();
         reader.onload = () => {
             profilePic.src = reader.result;
-            sessionStorage.setItem("profilePic", reader.result);
+            localStorage.setItem("profilePic", reader.result);
             };
         reader.readAsDataURL(file);
     }
