@@ -1,8 +1,8 @@
 /* Estos son los datos */
-const nombre = sessionStorage.getItem("name")
-const apellido = sessionStorage.getItem("lastname")
-const email = sessionStorage.getItem("mail")
-const telefono = sessionStorage.getItem("phone")
+const nombre = localStorage.getItem("name")
+const apellido = localStorage.getItem("lastname")
+const email = localStorage.getItem("mail")
+const telefono = localStorage.getItem("phone")
 /* Estos son los section */
 const sectionNombre = document.getElementById("d-name")
 const sectionApellido = document.getElementById("d-lastname")
@@ -56,8 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("log-out").addEventListener("click", () => {
-        sessionStorage.clear()
-        window.location = "login.html"
+        localStorage.removeItem("name");
+        localStorage.removeItem("lastname");
+        localStorage.removeItem("mail");
+        localStorage.removeItem("phone");
+        localStorage.removeItem("profilePic");
+        window.location = "login.html";
     });
 
     document.getElementById("go-back").addEventListener("click", () => {
