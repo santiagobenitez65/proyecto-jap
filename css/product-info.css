@@ -3,18 +3,12 @@
   padding: 0;
 }
 
-
-footer {
-  margin-top: auto;
-  width: 100%;
-  background: #D9D9D9;
-  padding: 1em;
-}
-
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
 }
 
 main {
@@ -26,7 +20,7 @@ main {
 footer {
   margin: 0;
   width: 100%;
-  background: #D9D9D9;
+  background: #212529;
   padding: 1em;
 }
 
@@ -48,8 +42,9 @@ footer p {
   display: flex;
   flex-direction: column;
   height: auto;
-  box-shadow: inset -5px -5px 10px grey;
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);
   border-bottom-right-radius: 8px;
+  background-color: var(--secondary-bg-color);
 }
 
 .nombre-categoria {
@@ -97,7 +92,7 @@ footer p {
 
 .img-thumbnail {
   padding: 0;
-  box-shadow: 4px 4px 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .galeria img {
@@ -110,7 +105,7 @@ footer p {
 }
 
 .galeria img:hover {
-  border: 2px solid #ffb33a;
+  border: 2px solid var(--main-color);
 }
 
 
@@ -119,12 +114,12 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--main-bg-color);
   height: auto;
 }
 
 #right-div h3 {
-  margin-bottom:auto ;
+  margin-bottom: auto;
 }
 
 #comprar,
@@ -135,8 +130,8 @@ footer p {
   max-width: 15em;
   border-radius: 10px;
   border-style: none;
-  background: #ffb33a;
-  color: white;
+  background: var(--main-color);
+  color: var(--main-bg-color);
   font-weight: bold;
   letter-spacing: 0.2em;
   margin-top: 1em;
@@ -197,13 +192,13 @@ footer p {
 
 .casilla-info-compra hr {
   width: 95%;
-  border-top: black ;
+  border-top: black;
 }
 
 #product-price {
   font-size: 32px;
   font-weight: bold;
-  color: black;
+  color: var(--text-color);
   text-align: center;
   margin: 20px 0;
 }
@@ -266,18 +261,23 @@ footer p {
   margin-bottom: 1em;
   font-size: 24px;
   font-weight: bold;
-  border-bottom: 2px solid #ddd;
   padding-bottom: 0.5em;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
 }
 
 #dejar-comentario {
   margin: 3em 2em 2em 2em;
   padding: 1em;
+<<<<<<< HEAD
   background-color: #e7e6e6;
   border: 1px solid #ffb33a;
   border-radius: 5px; 
+=======
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+>>>>>>> 2648446dc4fe636b330ba15b42485c96cfa059f3
   height: auto;
 }
 
@@ -290,6 +290,7 @@ footer p {
   width: 100%;
   height: auto;
   border-radius: 5px;
+<<<<<<< HEAD
   border: 1px solid #ccc;
   padding: 0.5em;
   margin-top: 0.5em; 
@@ -299,13 +300,31 @@ footer p {
 #publicar-comentario {
   background-color: #ffb33a;
   color: white;
+=======
+  padding: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color: var(--secondary-bg-color);
+  border: none;
+  color: var(--text-color);
+}
+
+#publicar-comentario {
+  background-color: var(--main-color);
+  color: var(--main-bg-color);
+>>>>>>> 2648446dc4fe636b330ba15b42485c96cfa059f3
   border: none;
   border-radius: 5px;
   padding: 0.2em 0.2em;
 }
 
 #estrellas svg {
+<<<<<<< HEAD
   cursor: pointer; 
+=======
+  cursor: pointer;
+  color: var(--main-color);
+>>>>>>> 2648446dc4fe636b330ba15b42485c96cfa059f3
 }
 
 
@@ -317,7 +336,7 @@ footer p {
     height: auto;
     box-shadow: none;
   }
-  
+
   #product-category {
     margin-left: 1em;
   }
@@ -341,6 +360,7 @@ footer p {
   #product-prize {
     font-size: 40px;
   }
+
   footer p {
     text-align: left;
   }
@@ -358,7 +378,7 @@ footer p {
     justify-content: center;
   }
 
-    #calificaciones {
+  #calificaciones {
     margin: 2em 1em;
     padding: 1em;
   }
@@ -377,15 +397,19 @@ footer p {
 }
 
 .comentario {
-  background: #fff;
+  background: var(--main-bg-color);
   padding: 1em 1.5em;
   border-radius: 10px;
+<<<<<<< HEAD
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+=======
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+>>>>>>> 2648446dc4fe636b330ba15b42485c96cfa059f3
   margin-bottom: 1em;
 }
 
 .comentario strong {
-    color: #21759c;
+  color: #21759c;
 }
 
 .comentario .fecha {
@@ -402,7 +426,7 @@ footer p {
 .comentario .estrellas {
   margin-top: 0.5em;
   font-size: 18px;
-  color: #ffb33a;
+  color: var(--main-color);
 }
 
 @media (max-width: 375px) {
@@ -415,7 +439,7 @@ footer p {
     font-size: x-large;
   }
 
-  #product-description{
+  #product-description {
     font-size: large;
   }
 
@@ -440,7 +464,8 @@ footer p {
   .galeria {
     justify-content: center;
   }
-    #calificaciones {
+
+  #calificaciones {
     margin: 1.5em 0.5em;
     padding: 1em;
   }
@@ -453,6 +478,10 @@ footer p {
     font-size: 13px;
   }
 
+<<<<<<< HEAD
 }
 
 
+=======
+}
+>>>>>>> 2648446dc4fe636b330ba15b42485c96cfa059f3

@@ -7,42 +7,63 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
-let showSpinner = function(){
+let showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
 }
 
-let hideSpinner = function(){
+let hideSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-let getJSONData = function(url){
-    let result = {};
-    showSpinner();
-    return fetch(url)
+let getJSONData = function (url) {
+  let result = {};
+  showSpinner();
+  return fetch(url)
     .then(response => {
       if (response.ok) {
         return response.json();
-      }else{
+      } else {
         throw Error(response.statusText);
       }
     })
-    .then(function(response) {
-          result.status = 'ok';
-          result.data = response;
-          hideSpinner();
-          return result;
+    .then(function (response) {
+      result.status = 'ok';
+      result.data = response;
+      hideSpinner();
+      return result;
     })
-    .catch(function(error) {
-        result.status = 'error';
-        result.data = error;
-        hideSpinner();
-        return result;
+    .catch(function (error) {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner();
+      return result;
     });
 }
 document.addEventListener("DOMContentLoaded", () => {
   const userNav = document.getElementById("usuario-nav");
   if (userNav) {
-    const usuario = sessionStorage.getItem("usuario");
+    const usuario = localStorage.getItem("name");
     userNav.textContent = usuario;
+    userNav.addEventListener("click", () => {
+      window.location.href = "my-profile.html";
+    })
   }
+
+  if (localStorage.getItem("tema") === "Oscuro") {
+    document.documentElement.style.setProperty("--main-bg-color", "#192229");
+    document.documentElement.style.setProperty("--secondary-bg-color", "#212E36");
+    document.documentElement.style.setProperty("--text-color", "#C8CDD0");
+    document.documentElement.style.setProperty("--card-border", "#2A3B47");
+    document.documentElement.style.setProperty("--box-color", "#2A3B47");
+    document.documentElement.style.setProperty("--mattress", "#212E36");
+
+  } else {
+    document.documentElement.style.setProperty("--main-bg-color", "#ffffff");
+    document.documentElement.style.setProperty("--secondary-bg-color", "#F4F3F3");
+    document.documentElement.style.setProperty("--text-color", "#212529");
+    document.documentElement.style.setProperty("--card-border", "#B5B5B5");
+    document.documentElement.style.setProperty("--box-color", "#bbbbbb");
+    document.documentElement.style.setProperty("--mattress", "#EBEBEB");
+  }
+
 });

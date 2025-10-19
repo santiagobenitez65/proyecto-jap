@@ -9,6 +9,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/my-profile.css" rel="stylesheet">
+  <link href="css/update-profile.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,56 +45,34 @@
         <div class="image">
           <img id="profile-pic" src="img/img_perfil.png" alt="profile picture">
         </div>
-
-        <div class="theme-container" onclick="toggleTheme()">
-          <div class="theme-title">
-            <h3>Tema</h3>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi"
-            viewBox="0 0 16 16" id="theme-icon">
-
-          </svg>
-          <div></div>
-        </div>
-        <div id="update-profile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
-            viewBox="0 0 16 16">
-            <path style="color: white;"
-              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-            <path fill-rule="evenodd" style="color: white;"
-              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-          </svg>
-          <p></p>Actualizar Perfil</p>
-        </div>
       </div>
       <div class="right-container">
         <div class="hover-container">
-          <label>Nombre</label>
+          <label>Nombre elegido</label>
           <div class="info-container">
-            <section id="d-name"></section>
+            <input type="text" id="i-name" name="Nombre">
           </div>
         </div>
         <div class="hover-container">
-          <label>Apellido</label>
+          <label>Apellido elegido</label>
           <div class="info-container">
-            <section id="d-lastname"></section>
+            <input type="text" id="i-lastname" name="Apellido">
           </div>
         </div>
         <div class="hover-container">
-          <label>Email</label>
+          <label>Email elegido</label>
           <div class="info-container">
-            <section id="d-email"></section>
+            <input type="email" id="i-email" name="Correo">
           </div>
         </div>
         <div class="hover-container">
-          <label>Teléfono</label>
+          <label>Teléfono elegido</label>
           <div class="info-container">
-            <section id="d-phone"></section>
+            <input id="i-phone" name="i-telNo" type="tel" />
           </div>
         </div>
-        <div id="log-out">
-          </p>
-          <p style="color: white;">Cerrar Sesión</p>
+        <div id="confirm">
+          <p style="color: white;">Confirmar Cambios</p>
         </div>
       </div>
     </div>
@@ -108,7 +87,7 @@
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+  <script src="js/update-profile.js"></script>
 </body>
 
 </html>

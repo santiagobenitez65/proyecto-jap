@@ -1,0 +1,23 @@
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+form .form-control,
+form .form-control:focus,
+#file-upload,
+#productDescription {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+div.form-control {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+}
+
+footer {
+    background-color: #212529;
+    margin-top: 2em;
+}

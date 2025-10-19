@@ -3,6 +3,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+}
+
+input {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    border: none;
 }
 
 .product-image {
@@ -18,7 +26,7 @@ h4,
 
 .sidebar,
 .card-box {
-    border: #FFB33A solid 2px;
+    border: var(--card-border) solid 2px;
 }
 
 #prod-main {
@@ -45,7 +53,7 @@ h4,
 }
 
 .card-box {
-    background-color: #E3E3E3;
+    background-color: var(--secondary-bg-color);
     border-radius: 10px;
 }
 
@@ -54,7 +62,7 @@ h4,
     top: 80px;
     width: 150px;
     max-height: fit-content;
-    background-color: #E3E3E3;
+    background-color: var(--secondary-bg-color);
     padding: 15px;
     border-radius: 10px;
 }
@@ -86,7 +94,7 @@ h4,
 }
 
 hr {
-    color: #FFB33A;
+    color: var(--card-border);
 }
 
 .costo {
@@ -129,7 +137,7 @@ hr {
 footer {
     bottom: 0;
     width: 100%;
-    background: #D9D9D9;
+    background: #212529;
     text-align: left;
     padding: 2em;
     font-size: 14px;
@@ -138,6 +146,8 @@ footer {
 select {
     border: none;
     height: fit-content;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
 }
 
 .titulo-resultados {
@@ -150,14 +160,20 @@ select {
     display: flex;
     flex-direction: column;
 }
+
 #buscador {
-    width: 100%; 
+    width: 100%;
     padding: 8px 12px;
     border: 2px solid #FFB33A;
     outline: none;
     font-size: 0.9rem;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     transition: 0.3s all;
+}
+
+#titulo,
+#resultados {
+    color: var(--text-color);
 }
 
 /*El media query que maneja el responsive para celu*/

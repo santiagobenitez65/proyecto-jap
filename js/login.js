@@ -1,28 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const usuarioGuardado = sessionStorage.getItem("usuario");
-  const passwordGuardada = sessionStorage.getItem("password");
+  const loginButton = document.getElementById("logButton");
+  const nameGuardado = localStorage.getItem("name");
+  const lastnameGuardado = localStorage.getItem("lastname");
+  const mailGuardado = localStorage.getItem("mail");
+  const passwordGuardada = localStorage.getItem("password");
 
-  if (usuarioGuardado && passwordGuardada){
+  if (nameGuardado && lastnameGuardado && mailGuardado && passwordGuardada) {
     window.location.href = "index.html";
-  
     return;
   }
 
-  const loginButton = document.getElementById("logButton");
-
   loginButton.addEventListener("click", () => {
-    const username = document.getElementById("name").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const lastname = document.getElementById("lastname").value.trim();
+    const emailInput = document.getElementById("mail");
+    const email = emailInput.value.trim();
     const password = document.getElementById("password").value.trim();
 
-    if (username === "" || password === "") {
-      alert("Por favor ingresa tu usuario y contraseña.");
+    if (email === "" || password === "" || name === "" || lastname === "") {
+      alert("Por favor completa todos los campos.");
       return;
     }
 
-    sessionStorage.setItem("usuario", username);
-    sessionStorage.setItem("password", password);
+    if (!emailInput.checkValidity()) {
+      alert("Ingrese un correo electrónico válido.");
+      return;
+    }
+
+    localStorage.setItem("lastname", lastname);
+    localStorage.setItem("name", name);
+    localStorage.setItem("mail", email);
+    localStorage.setItem("password", password);
 
     window.location.href = "index.html";
-
   });
 });
+
+
+
+
