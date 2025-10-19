@@ -16,11 +16,11 @@ function displayPlaceholder() {
     sectionApellido.placeholder = `  ${apellido}`
     sectionEmail.placeholder = `  ${email}`
 
-    if (sessionStorage.getItem("phone") === null) {
-        sessionStorage.setItem("phone", "");
+    if (localStorage.getItem("phone") === null) {
+        localStorage.setItem("phone", "");
     }
 
-    if (sessionStorage.getItem("phone") !== "") {
+    if (localStorage.getItem("phone") !== "") {
         sectionTelefono.placeholder = `  ${telefono}`
     } else {
         sectionTelefono.placeholder = "  Ingrese número"
@@ -38,10 +38,10 @@ function updateData() {
         return;
     }
 
-    if (newName !== "") sessionStorage.setItem("name", newName);
-    if (newLastname !== "") sessionStorage.setItem("lastname", newLastname);
-    if (newEmail !== "") sessionStorage.setItem("mail", newEmail);
-    if (newPhone !== "") sessionStorage.setItem("phone", newPhone);
+    if (newName !== "") localStorage.setItem("name", newName);
+    if (newLastname !== "") localStorage.setItem("lastname", newLastname);
+    if (newEmail !== "") localStorage.setItem("mail", newEmail);
+    if (newPhone !== "") localStorage.setItem("phone", newPhone);
 
 };
 
