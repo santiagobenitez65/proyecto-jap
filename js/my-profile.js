@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("mail");
         localStorage.removeItem("phone");
         localStorage.removeItem("profilePic");
+        loacalStorega.removeItem("password");
         window.location = "login.html";
     });
 
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         profilePic.src = savedPic;
     }
 });
+
 
 
 
