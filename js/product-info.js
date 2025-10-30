@@ -140,11 +140,11 @@ document.getElementById("publicar-comentario").addEventListener("click", () => {
     newComment.product = localStorage.getItem("selectedProductId");
     newComment.score = rating;
     newComment.description = document.getElementById("input-comentario").value;
-    newComment.user = sessionStorage.getItem("usuario");
+    newComment.user = `${localStorage.getItem("name")}_${localStorage.getItem("lastname")}`;
     newComment.dateTime = `${currentDate.getFullYear()}-${formatTime(currentDate.getMonth() + 1)}-${formatTime(currentDate.getDate())} ${formatTime(currentDate.getHours())}:${formatTime(currentDate.getMinutes())}:${formatTime(currentDate.getSeconds())}`;
     comments.push(newComment);
     showComments(comments);
-    setRating(0)
+    setRating(0);
     document.getElementById("input-comentario").value = "";
 
 })
