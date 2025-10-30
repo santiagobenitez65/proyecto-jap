@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loginButton = document.getElementById("logButton");
-  const nameGuardado = sessionStorage.getItem("name");
-  const lastnameGuardado = sessionStorage.getItem("lastname");
-  const mailGuardado = sessionStorage.getItem("mail");
-  const passwordGuardada = sessionStorage.getItem("password");
+  const nameGuardado = localStorage.getItem("name");
+  const lastnameGuardado = localStorage.getItem("lastname");
+  const mailGuardado = localStorage.getItem("mail");
+  const passwordGuardada = localStorage.getItem("password");
 
-  if (nameGuardado && lastnameGuardado && mailGuardado && passwordGuardada){
+  if (nameGuardado && lastnameGuardado && mailGuardado && passwordGuardada) {
     window.location.href = "index.html";
     return;
   }
@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    sessionStorage.setItem("lastname", lastname);
-    sessionStorage.setItem("name", name);
-    sessionStorage.setItem("mail", email);
-    sessionStorage.setItem("password", password);
+    localStorage.setItem("lastname", lastname);
+    localStorage.setItem("name", name);
+    localStorage.setItem("mail", email);
+    localStorage.setItem("password", password);
 
     window.location.href = "index.html";
   });

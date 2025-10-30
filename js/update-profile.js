@@ -1,8 +1,8 @@
 /* Datos */
-const nombre = sessionStorage.getItem("name")
-const apellido = sessionStorage.getItem("lastname")
-const email = sessionStorage.getItem("mail")
-const telefono = sessionStorage.getItem("phone")
+const nombre = localStorage.getItem("name")
+const apellido = localStorage.getItem("lastname")
+const email = localStorage.getItem("mail")
+const telefono = localStorage.getItem("phone")
 
 /* Estos son los input */
 const sectionNombre = document.getElementById("i-name")
@@ -16,14 +16,14 @@ function displayPlaceholder() {
     sectionApellido.placeholder = `  ${apellido}`
     sectionEmail.placeholder = `  ${email}`
 
-    if (sessionStorage.getItem("phone") === null) {
-        sessionStorage.setItem("phone", "");
+    if (localStorage.getItem("phone") === null) {
+        localStorage.setItem("phone", "");
     }
 
-    if (sessionStorage.getItem("phone") !== "") {
+    if (localStorage.getItem("phone") !== "") {
         sectionTelefono.placeholder = `  ${telefono}`
     } else {
-        sectionTelefono. placeholder = "  Ingrese número"
+        sectionTelefono.placeholder = "  Ingrese número"
     }
 };
 
@@ -33,15 +33,15 @@ function updateData() {
     const newEmail = sectionEmail.value;
     const newPhone = sectionTelefono.value.trim();
 
-   if (newEmail !== "" && !sectionEmail.checkValidity()) {
-    alert("Ingrese un correo electrónico válido.");
-    return;
-  }
+    if (newEmail !== "" && !sectionEmail.checkValidity()) {
+        alert("Ingrese un correo electrónico válido.");
+        return;
+    }
 
-  if (newName !== "") sessionStorage.setItem("name", newName);
-  if (newLastname !== "") sessionStorage.setItem("lastname", newLastname);
-  if (newEmail !== "") sessionStorage.setItem("mail", newEmail);
-  if (newPhone !== "") sessionStorage.setItem("phone", newPhone);
+    if (newName !== "") localStorage.setItem("name", newName);
+    if (newLastname !== "") localStorage.setItem("lastname", newLastname);
+    if (newEmail !== "") localStorage.setItem("mail", newEmail);
+    if (newPhone !== "") localStorage.setItem("phone", newPhone);
 
 };
 
@@ -74,14 +74,14 @@ fileInput.addEventListener("change", (event) => {
         const reader = new FileReader();
         reader.onload = () => {
             profilePic.src = reader.result;
-            sessionStorage.setItem("profilePic", reader.result);
-            };
+            localStorage.setItem("profilePic", reader.result);
+        };
         reader.readAsDataURL(file);
     }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedPic = sessionStorage.getItem("profilePic");
+    const savedPic = localStorage.getItem("profilePic");
     if (savedPic) {
         profilePic.src = savedPic;
     }
