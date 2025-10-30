@@ -77,8 +77,63 @@ document.addEventListener("DOMContentLoaded", function () {
                 relatedContainer.appendChild(card);
             });
 
+            const comprarBtn = document.getElementById("comprar");
+            const agregarBtn = document.getElementById("agr-carrito");
+            const cantidadInput = document.getElementById("cantidad");
+
+            function getCart() {
+                return JSON.parse(localStorage.getItem("cart")) || [];
+            }
+
+            function saveCart(cart) {
+                localStorage.setItem("cart", JSON.stringify(cart));
+            }
+
+            function crearProducto() {
+                return {
+                    id: data.id,
+                    name: data.name,
+                    price: `${data.currency} ${data.cost}`,
+                    image: data.images[0],
+                    quantity: parseInt(cantidadInput.value)
+                };
+            }
+
+            agregarBtn.addEventListener("click", () => {
+                const nuevoProducto = crearProducto();
+                let cart = getCart();
+
+                const existente = cart.find(item => item.id === nuevoProducto.id);
+                if (existente) {
+                    existente.quantity += nuevoProducto.quantity;
+                } else {
+                    cart.push(nuevoProducto);
+                }
+
+                saveCart(cart);
+                alert("Producto añadido al carrito ✅");
+            });
+
+
+              comprarBtn.addEventListener("click", () => {
+                const nuevoProducto = crearProducto();
+                let cart = getCart();
+
+                const existente = cart.find(item => item.id === nuevoProducto.id);
+                if (existente) {
+                    existente.quantity += nuevoProducto.quantity;
+                } else {
+                    cart.push(nuevoProducto);
+                }
+
+            saveCart(cart);
+            window.location.href = "cart.html";
+            });
+            
+
         })
         .catch(error => console.error("Error al cargar info del producto:", error));
+
     /*comentarios*/
     fetch(COMMENTS_URL)
         .then(response => response.json())
@@ -140,11 +195,11 @@ document.getElementById("publicar-comentario").addEventListener("click", () => {
     newComment.product = localStorage.getItem("selectedProductId");
     newComment.score = rating;
     newComment.description = document.getElementById("input-comentario").value;
-    newComment.user = `${localStorage.getItem("name")}_${localStorage.getItem("lastname")}`;
+    newComment.user = sessionStorage.getItem("usuario");
     newComment.dateTime = `${currentDate.getFullYear()}-${formatTime(currentDate.getMonth() + 1)}-${formatTime(currentDate.getDate())} ${formatTime(currentDate.getHours())}:${formatTime(currentDate.getMinutes())}:${formatTime(currentDate.getSeconds())}`;
     comments.push(newComment);
     showComments(comments);
-    setRating(0);
+    setRating(0)
     document.getElementById("input-comentario").value = "";
 
 })
