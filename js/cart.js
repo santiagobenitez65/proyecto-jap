@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p id="nombre-producto">${product.name}</p>
           <p>Precio: ${product.currency} ${product.price}</p>
           <label>Cantidad:</label> 
-          <input type="number" min="1" value="${product.quantity}" class="cantidad-input" data-id="${product.id}">
+          <input id="cantidad-cart" type="number" min="1" value="${product.quantity}" class="cantidad-input" data-id="${product.id}">
           <p>Subtotal: ${product.currency} ${product.price * product.quantity}</p>
         </div>
       </div>
