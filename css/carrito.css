@@ -10,7 +10,7 @@ body {
 }
 
 .productos-lista {
-    flex: 2; 
+    flex: 2;
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color);
@@ -20,12 +20,22 @@ body {
     display: flex;
     background-color: var(--secondary-bg-color);
     border: 1px solid var(--card-border);
-    border-radius: 5px; 
+    border-radius: 5px;
     overflow: hidden;
     margin-bottom: 1.5rem;
 }
 
 .producto-imagen {
+    width: 180px;
+    object-fit: cover;
+    height: 100%;
+}
+
+.carrito-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 200px;
 }
 
@@ -41,10 +51,10 @@ font-size: 1rem;
 }
 
 .lado-resumen {
-    flex: 1; 
+    flex: 1;
     background-color: var(--secondary-bg-color);
     border: 1px solid var(--card-border);
-    padding: 1.5rem; 
+    padding: 1.5rem;
     height: fit-content;
 }
 
@@ -64,15 +74,58 @@ font-size: 1rem;
     cursor: pointer;
     font-size: 1rem;
     margin-top: 1rem;
+    box-shadow: 0px 0px 10px #ffcb77;
 }
 
+#pagar:hover {
+    background-color: #e49a23;
+}
+
+#vaciar-carrito {
+    box-shadow: 0px 0px 10px #FF4827;
+    background-color: #FF4827;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.lado-resumen,
+h3 {
+    text-align: center;
+}
+
+.companies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5em;
+}
+
+.companies-img {
+    position: relative;
+    bottom: 1.3em;
+}
+
+@media (max-width: 768px) {
 
 @media (max-width: 768px){
     .lado-productos {
         flex-direction: column;
     }
 
-    .lado-resumen { 
+    .lado-resumen {
         margin-top: 2rem;
     }
 }
