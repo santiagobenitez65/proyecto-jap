@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="carrito-info">
           <p id="nombre-producto">${product.name}</p>
           <p>Precio: ${product.currency} ${product.price}</p>
-          <label>Cantidad:</label> 
-          <input id="cantidad-cart" type="number" min="1" value="${product.quantity}" class="cantidad-input" data-id="${product.id}">
+          <p>Cantidad:</> <input style="margin-bottom: 0.5em;" id="cantidad-cart" type="number" min="0" value="${product.quantity}" class="cantidad-input" data-id="${product.id}">
           <p>Subtotal: ${product.currency} ${product.price * product.quantity}</p>
         </div>
       </div>
@@ -58,6 +57,32 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   `;
+
+  const inputsCantidad = contenedorCarrito.querySelectorAll(".cantidad-input");
+  inputsCantidad.forEach(input => {
+    input.addEventListener("change", (ev) => {
+      /* normalice valores */
+      const IdCrudo = ev.target.dataset.id;
+      const idString = String(IdCrudo); 
+      const ValueCrudo = ev.target.value;
+      const nuevaCantidad = Number(ValueCrudo);
+      const cantidad = Number(nuevaCantidad) ? nuevaCantidad : 0;
+
+      
+      const index = cart.findIndex(item => String(item.id) === idString);
+      if (index === -1) return;
+
+      if (cantidad === 0) {
+        cart.splice(index, 1);
+      } else {
+        cart[index].quantity = cantidad;
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+      updateCartCount();
+    });
+  });
 
   const vaciarCarrito = document.getElementById("vaciar-carrito");
 

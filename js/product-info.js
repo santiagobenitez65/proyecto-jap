@@ -100,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 };
             }
 
+
+
             agregarBtn.addEventListener("click", () => {
                 const nuevoProducto = crearProducto();
                 let cart = getCart();
@@ -131,6 +133,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 saveCart(cart);
                 updateCartCount();
                 window.location.href = "cart.html";
+            });
+
+
+
+
+            const inputCantidad = document.getElementById("cantidad");
+            const subtotalSpan = document.getElementById("subtotal");
+
+            inputCantidad.addEventListener("change", () => {
+                const cantidad = inputCantidad.value; 
+                const subtotal = cantidad * data.cost;
+
+                subtotalSpan.innerText = `${data.currency} ${subtotal}`;
+
             });
 
 
