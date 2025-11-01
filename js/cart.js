@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="carrito-item">
         <img class="producto-imagen" src="${product.image}" alt="${product.name}">
         <div class="carrito-info">
-          <p>${product.name}</p>
+          <p id="nombre-producto">${product.name}</p>
           <p>Precio: ${product.price}</p>
           <p>Cantidad: ${product.quantity}</p>
         </div>
