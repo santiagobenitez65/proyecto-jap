@@ -26,7 +26,7 @@ body {
 }
 
 .producto-imagen {
-    width: 10em;
+    width: 13em;
 }
 
 .carrito-info {
@@ -88,5 +88,9 @@ font-size: 1rem;
 
     .carrito-info {
         font-size: 0.6rem;
-}
+    }
+
+    .producto-imagen{
+        width: 10rem;
+    }
 }
