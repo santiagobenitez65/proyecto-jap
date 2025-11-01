@@ -110,7 +110,7 @@ img {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
+
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -166,7 +166,6 @@ label {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #FF4827;
     width: 90%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #ffcb77;
@@ -176,6 +175,7 @@ label {
     letter-spacing: 0.1em;
     margin-top: 2.3em;
     box-shadow: 0px 0px 10px #FF4827;
+    background-color: #FF4827;
 }
 
 .log-out:hover {

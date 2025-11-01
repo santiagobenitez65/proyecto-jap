@@ -93,7 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 return {
                     id: data.id,
                     name: data.name,
-                    price: `${data.currency} ${data.cost}`,
+                    currency: data.currency,
+                    price: data.cost,
                     image: data.images[0],
                     quantity: parseInt(cantidadInput.value)
                 };
@@ -111,11 +112,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 saveCart(cart);
+                updateCartCount();
                 alert("Producto añadido al carrito ✅");
             });
 
 
-              comprarBtn.addEventListener("click", () => {
+            comprarBtn.addEventListener("click", () => {
                 const nuevoProducto = crearProducto();
                 let cart = getCart();
 
@@ -126,10 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     cart.push(nuevoProducto);
                 }
 
-            saveCart(cart);
-            window.location.href = "cart.html";
+                saveCart(cart);
+                updateCartCount();
+                window.location.href = "cart.html";
             });
-            
+
 
         })
         .catch(error => console.error("Error al cargar info del producto:", error));

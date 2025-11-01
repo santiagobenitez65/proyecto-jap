@@ -39,6 +39,17 @@ let getJSONData = function (url) {
       return result;
     });
 }
+
+
+
+function updateCartCount() {
+  const cartBadge = document.getElementById("cart-count");
+  const cart = JSON.parse(localStorage.getItem("cart") || [])
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  cartBadge.textContent = totalQuantity;
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const userNav = document.getElementById("usuario-nav");
   if (userNav) {
@@ -65,5 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.setProperty("--box-color", "#bbbbbb");
     document.documentElement.style.setProperty("--mattress", "#EBEBEB");
   }
+
+  /* Badge del carrito */
+
+  updateCartCount();
 
 });
