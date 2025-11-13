@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("change", (ev) => {
       /* normalice valores */
       const IdCrudo = ev.target.dataset.id;
-      const idString = String(IdCrudo); 
+      const idString = String(IdCrudo);
       const ValueCrudo = ev.target.value;
       const nuevaCantidad = Number(ValueCrudo);
       const cantidad = Number(nuevaCantidad) ? nuevaCantidad : 0;
 
-      
+
       const index = cart.findIndex(item => String(item.id) === idString);
       if (index === -1) return;
 
@@ -94,7 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
   });
 
+  document.getElementById("pagar").addEventListener("click", () => {
+    window.location.href = "buy.html"
+  });
+
 });
+
 
 
 
