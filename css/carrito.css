@@ -55,7 +55,7 @@ body {
     background-color: var(--main-bg-color);
 }
 
-#cantidad-cart{
+#cantidad-cart {
     width: 150px;
     margin-top: 0.5rem;
 }
@@ -112,7 +112,15 @@ h3 {
     bottom: 1.3em;
 }
 
-@media (max-width: 768px){
+footer {
+    width: 100%;
+    background: #212529;
+    padding: 1em;
+    text-align: center;
+    color: #C8CDD0;
+}
+
+@media (max-width: 768px) {
     .lado-productos {
         flex-direction: column;
     }
@@ -122,12 +130,12 @@ h3 {
     }
 }
 
-@media (max-width: 375px){
+@media (max-width: 375px) {
     .lado-productos {
         flex-direction: column;
     }
 
-    .lado-resumen { 
+    .lado-resumen {
         margin-top: 2rem;
     }
 
@@ -135,11 +143,11 @@ h3 {
         font-size: 0.6rem;
     }
 
-    .producto-imagen{
+    .producto-imagen {
         width: 10rem;
     }
 
-    #cantidad-cart{
-    width: 100px;
-}
+    #cantidad-cart {
+        width: 100px;
+    }
 }

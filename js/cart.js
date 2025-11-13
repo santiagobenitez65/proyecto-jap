@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Se ha vaciado el carrito correctamente.");
     updateCartCount();
   });
-
 });
 
 

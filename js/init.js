@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (localStorage.getItem("tema") === "Oscuro") {
     document.documentElement.style.setProperty("--main-bg-color", "#192229");
-    document.documentElement.style.setProperty("--secondary-bg-color", "#212E36");
+    document.documentElement.style.setProperty("--secondary-bg-color", "#2A3B47");
     document.documentElement.style.setProperty("--text-color", "#C8CDD0");
     document.documentElement.style.setProperty("--card-border", "#2A3B47");
     document.documentElement.style.setProperty("--box-color", "#2A3B47");
