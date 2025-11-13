@@ -42,44 +42,45 @@
             <h2 class="title">Finalizar Compra.</h2>
             <h6 class="subtitle">Dirección de envío</h6>
             <div class="contenedor">
-                <div>
-                    <label>Departamento</label>
-                    <div class="contenedor-input">
-                        <input type="text" name="departamento">
+                <div class="flex-column">
+                    <div>
+                        <label>Departamento</label>
+                        <div class="contenedor-input">
+                            <input type="text" name="departamento">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Localidad</label>
+                        <div class="contenedor-input">
+                            <input type="text" name="localidad">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Calle</label>
+                        <div class="contenedor-input">
+                            <input type="text" name="calle">
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <label>Localidad</label>
-                    <div class="contenedor-input">
-                        <input type="text" name="localidad">
+                <div class="flex-column">
+                    <div>
+                        <label>Número</label>
+                        <div class="contenedor-input">
+                            <input type="text" name="numero">
+                        </div>
                     </div>
-                </div>
-
-                <div>
-                    <label>Calle</label>
-                    <div class="contenedor-input">
-                        <input type="text" name="calle">
-                    </div>
-                </div>
-
-                <div>
-                    <label>Número</label>
-                    <div class="contenedor-input">
-                        <input type="text" name="numero">
-                    </div>
-                </div>
-
-                <div>
-                    <label>Esquina</label>
-                    <div class="contenedor-input">
-                        <input type="text" name="esquina">
+                    <div>
+                        <label>Esquina</label>
+                        <div class="contenedor-input">
+                            <input type="text" name="esquina">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <h6 class="subtitle">Forma de pago</h6>
-            <div class="contenedor fit-content">
+            <div class="contenedor">
                 <select name="forma-de-pago" id="forma-de-pago">
                     <option value="0">Seleccione forma de pago</option>
                     <option value="1">Tarjeta de débito o crédito</option>
@@ -88,7 +89,7 @@
             </div>
             <div class="contenedor" id="datos"></div>
             <h6 class="subtitle">Tipo de envío</h6>
-            <div class="contenedor fit-content">
+            <div class="contenedor">
                 <select name="tipo-de-envio">
                     <option value="0">Seleccione el tipo de envío</option>
                     <option value="1">Premium 2 a 5 días (15%)</option>
@@ -99,8 +100,9 @@
             <div class="costos">
                 <h6 class="subtitle">Costos</h6>
             </div>
-            <div class="contenedor">
-                <button id=""></button>
+            <div class="contenedor botones">
+                <button id="cancelar">Cancelar</button>
+                <button id="confirmar">Confirmar</button>
             </div>
         </div>
     </main>

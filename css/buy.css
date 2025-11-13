@@ -28,11 +28,11 @@ main {
 }
 
 .contenedor {
-    width: 40%;
+    width: fit-content;
     margin-inline: auto;
     display: flex;
-    flex-wrap: wrap;
     gap: 1em;
+    margin-top: 2em;
 }
 
 input {
@@ -51,14 +51,40 @@ input {
     border-radius: 5px;
 }
 
-.fit-content {
-    width: fit-content;
-}
-
 select {
     background-color: var(--secondary-bg-color);
     color: var(--text-color);
     border-radius: 5px;
+}
+
+#datos {
+    flex-direction: column;
+}
+
+#confirmar,
+#cancelar {
+    height: 40px;
+    width: 120px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    border: none;
+
+}
+
+#confirmar {
+    background-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+#cancelar {
+    background-color: red;
+    box-shadow: 0 0 5px red;
+}
+
+.botones {
+    width: 80%;
+    justify-content: space-between;
 }
 
 footer {
@@ -73,12 +99,10 @@ footer {
     .mattress {
         width: 100%;
     }
+}
 
+@media (max-width: 480px) {
     .contenedor {
-        width: 90%;
-    }
-
-    .fit-content {
-        width: fit-content;
+        flex-direction: column;
     }
 }
