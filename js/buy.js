@@ -64,4 +64,86 @@ selectPago.addEventListener("change", () => {
                 </div>
             `
     }
-})
+});
+
+
+/* ventana de costos */
+document.addEventListener("DOMContentLoaded", () => {
+    const subtotalDisplay = document.querySelector(".subtotal");
+    const costoEnvioDisplay = document.querySelector(".costo-envio");
+    const totalDisplay = document.querySelector(".total");
+    const envioSelect = document.querySelector('select[name = "tipo-de-envio"]');
+    const btnConfirmar = document.getElementById("confirmar");
+
+    const usd_a_uyu = 41;
+
+    function porcentajeEnvio(value) {
+        switch (String(value)) {
+            case "1": /* Premium 15% */
+                return 0.15;
+            case "2": /* Express 7% */
+                return 0.07;
+            case "3": /* Standard 5% */
+                return 0.05;
+            default: /* Ninguno */
+                return 0;
+        }
+    }
+
+    /* Conseguir carrito del localstorage */
+    function leerCarrito() {
+        try {
+            const raw = localStorage.getItem("cart") || "[]";
+            const parsed = JSON.parse(raw);
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+            console.error("Error leyendo carrito:", error);
+            return [];
+        }
+    }
+
+    /* Conversion de dolares a pesos en el subtotal. Calculo del subtotal */
+    function calculoSubtotal(productos) {
+        let subtotal = 0;
+        productos.forEach(p => {
+            const precio = Number(p.price);
+            const cantidad = Number(p.quantity);
+            const moneda = (p.currency || "UYU").toString().toUpperCase();
+
+            if (moneda === "USD") {
+                subtotal += precio * cantidad * usd_a_uyu;
+            } else {
+                subtotal += precio * cantidad;
+            }
+        });
+        return subtotal;
+    }
+
+
+    /* Calculos de costos y display en buy.html*/
+    function actualizarCostos() {
+        const productos = leerCarrito();
+        const subtotal = calculoSubtotal(productos);
+        const envioValor = envioSelect ? envioSelect.value : "0";
+        const porcentaje = porcentajeEnvio(envioValor);
+        const costoEnvio = subtotal * porcentaje;
+        const envioRedondeado = Math.round(costoEnvio);
+        const total = subtotal + envioRedondeado;
+
+
+        subtotalDisplay.innerHTML = `<p><b>Subtotal:</b> ${subtotal.toLocaleString("es-ES")}</p>`;
+        costoEnvioDisplay.innerHTML = `<p><b>Costo con Envío:</b> ${envioRedondeado.toLocaleString("es-ES")}</p>`
+        totalDisplay.innerHTML = `<p><b>Total:</b> ${total.toLocaleString("es-ES")}</p>`
+
+    }
+
+    /* Recalcular al cambiar tipo de envío */
+  if (envioSelect) envioSelect.addEventListener("change", actualizarCostos);
+
+  /* Escucha cambios en localStorage */
+  window.addEventListener("storage", (ev) => {
+    if (ev.key === "cart") actualizarCostos();
+  });
+
+    actualizarCostos()
+}); 
