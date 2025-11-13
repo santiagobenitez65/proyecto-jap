@@ -45,7 +45,7 @@ input {
 
 .costos {
     background-color: var(--secondary-bg-color);
-    width: 80%;
+    width: 50%;
     margin: auto;
     min-height: 15em;
     border-radius: 5px;
@@ -64,7 +64,7 @@ select {
 #confirmar,
 #cancelar {
     height: 40px;
-    width: 120px;
+    width: 10em;
     border-radius: 6px;
     color: white;
     font-weight: bold;
@@ -83,8 +83,12 @@ select {
 }
 
 .botones {
-    width: 80%;
+    gap: 20em;
     justify-content: space-between;
+}
+
+.subtotal, .costo-envio, .total {
+    margin-left: 8em;
 }
 
 footer {
@@ -106,7 +110,11 @@ footer {
         flex-direction: column;
     }
 
+    .subtotal, .costo-envio, .total {
+    margin-left: 2em;
+}
+
     .botones {
-        flex-direction: row;
+        gap: 1em
     }
 }
