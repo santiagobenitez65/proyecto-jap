@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/buy.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Vender</a>
+                    </li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+        <p id="usuario-nav"></p>
+    </nav>
+    <main>
+        <div class="mattress">
+            <h2 class="title">Finalizar Compra.</h2>
+            <h6 class="subtitle">Dirección de envío</h6>
+            <div class="contenedor">
+                <div>
+                    <label>Departamento</label>
+                    <div class="contenedor-input">
+                        <input type="text" name="departamento">
+                    </div>
+                </div>
+
+                <div>
+                    <label>Localidad</label>
+                    <div class="contenedor-input">
+                        <input type="text" name="localidad">
+                    </div>
+                </div>
+
+                <div>
+                    <label>Calle</label>
+                    <div class="contenedor-input">
+                        <input type="text" name="calle">
+                    </div>
+                </div>
+
+                <div>
+                    <label>Número</label>
+                    <div class="contenedor-input">
+                        <input type="text" name="numero">
+                    </div>
+                </div>
+
+                <div>
+                    <label>Esquina</label>
+                    <div class="contenedor-input">
+                        <input type="text" name="esquina">
+                    </div>
+                </div>
+            </div>
+
+            <h6 class="subtitle">Forma de pago</h6>
+            <div class="contenedor fit-content">
+                <select name="forma-de-pago" id="forma-de-pago">
+                    <option value="0">Seleccione forma de pago</option>
+                    <option value="1">Tarjeta de débito o crédito</option>
+                    <option value="2">Transferencia Bancaria</option>
+                </select>
+            </div>
+            <div class="contenedor" id="datos"></div>
+            <h6 class="subtitle">Tipo de envío</h6>
+            <div class="contenedor fit-content">
+                <select name="tipo-de-envio">
+                    <option value="0">Seleccione el tipo de envío</option>
+                    <option value="1">Premium 2 a 5 días (15%)</option>
+                    <option value="2">Express 5 a 8 días (7%)</option>
+                    <option value="3">Standard 12 a 15 días (5%)</option>
+                </select>
+            </div>
+            <div class="costos">
+                <h6 class="subtitle">Costos</h6>
+            </div>
+            <div class="contenedor">
+                <button id=""></button>
+            </div>
+        </div>
+    </main>
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-end">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a
+                    Programar</a></p>
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/buy.js"></script>
+</body>
+
+</html>
