@@ -82,7 +82,7 @@
             <h6 class="subtitle">Forma de pago</h6>
             <div class="contenedor">
                 <select name="forma-de-pago" id="forma-de-pago">
-                    <option value="0">Seleccione forma de pago</option>
+                    <option disabled selected>Seleccione forma de pago</option>
                     <option value="1">Tarjeta de débito o crédito</option>
                     <option value="2">Transferencia Bancaria</option>
                 </select>
@@ -91,14 +91,17 @@
             <h6 class="subtitle">Tipo de envío</h6>
             <div class="contenedor">
                 <select name="tipo-de-envio">
-                    <option value="0">Seleccione el tipo de envío</option>
+                    <option value="0" disabled selected>Seleccione el tipo de envío</option>
                     <option value="1">Premium 2 a 5 días (15%)</option>
                     <option value="2">Express 5 a 8 días (7%)</option>
                     <option value="3">Standard 12 a 15 días (5%)</option>
                 </select>
             </div>
             <div class="costos">
-                <h6 class="subtitle">Costos</h6>
+                <h5 class="subtitle">Costos</h5>
+                <section class="subtotal"></section>
+                <section class="costo-envio"></section>
+                <section class="total"></section>
             </div>
             <div class="contenedor botones">
                 <button id="cancelar">Cancelar</button>
