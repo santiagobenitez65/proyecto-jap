@@ -93,6 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Se ha vaciado el carrito correctamente.");
     updateCartCount();
   });
+
+  const irPago = document.getElementById("pagar");
+  irPago.addEventListener("click", () => {
+    window.location.href = "buy.html";
+  });
 });
 
 
