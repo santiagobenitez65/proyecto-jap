@@ -194,3 +194,9 @@ Sino, la compra se realiza con éxito, se vacía el carrito y se regresa a la p�
     window.location.href = "index.html";
   }
 });
+
+//Botón cancelar// 
+const cancelar = document.getElementById("cancelar");
+cancelar.addEventListener("click", () => {
+     window.location.href = "cart.html";
+    });
