@@ -107,5 +107,7 @@ confirmar.addEventListener("click", () => {
     alert("Complete todos los campos para continuar con la compra");
   } else {
     alert("¡Compra realizada con éxito! ✅");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
   }
 });
