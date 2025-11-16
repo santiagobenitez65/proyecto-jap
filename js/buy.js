@@ -1,3 +1,4 @@
+//Seleccionar las opciones de pago//
 const selectPago = document.getElementById("forma-de-pago");
 const datos = document.getElementById("datos");
 
@@ -5,10 +6,10 @@ selectPago.addEventListener("change", () => {
     console.log(selectPago.value)
     switch (selectPago.value) {
         case "0":
-            datos.innerHTML = "";
+            datos.innerHTML = ""; 
             break;
 
-        case "1":
+        case "1": //Pago con tarjeta, se despliegan campos específicos//
             datos.innerHTML = `
                 <div>
                     <label>Número de tarjeta</label>
@@ -40,7 +41,7 @@ selectPago.addEventListener("change", () => {
             `
             break;
 
-        case "2":
+        case "2": //Pago con transferencia, se despliegan campos específicos//
             datos.innerHTML = `
                 <div>
                     <label>Número de cuenta</label>
@@ -66,7 +67,7 @@ selectPago.addEventListener("change", () => {
     }
 });
 
-//Funcionalidad boton pagar// 
+//Funcionalidad botón pagar// 
 const departamento = document.getElementById("departamento");
 const localidad = document.getElementById("localidad");
 const calle = document.getElementById("calle");
@@ -78,7 +79,6 @@ const confirmar = document.getElementById("confirmar");
 const infoCompra = document.getElementById("info-compra");
 
 confirmar.addEventListener("click", () => {
-    
     const direccionIncompleta = 
     departamento.value.trim() === "" ||
     localidad.value.trim() === "" ||
@@ -97,6 +97,8 @@ confirmar.addEventListener("click", () => {
         datosPagoVacios = Array.from(inputsPago).some(inp => inp.value.trim() === "");
     }
 
+/*Si se cumple que alguno de los campos no se encuentran completo, una alerta indica que hay que completarlos. 
+Sino, la compra se realiza con éxito, se vacía el carrito y se regresa a la página principal*/
   if (
     direccionIncompleta ||
     pagoIncompleto ||
