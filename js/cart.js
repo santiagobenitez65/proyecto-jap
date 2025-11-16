@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const productosGuardados = localStorage.getItem("cart");
   const cart = productosGuardados ? JSON.parse(productosGuardados) : [];
 
+  //Si el carrito está vacío, se muestra un mensaje//
   if (cart.length === 0) {
     contenedorCarrito.innerHTML = `
       <div class="carrito-vacio">
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let total = 0;
 
+  /*Si hay algún producto en el localStorage, se genera una tarjeta para cada tipo (con la cantidad que haya de ese), 
+  también se calcula el costo por la cantidad de cada producto*/
   let productosHTML = '';
   cart.forEach(product => {
     productosHTML += `
@@ -27,13 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-    if (product.currency === "USD") {
+    if (product.currency === "USD") { //Pasa precios en dólares a pesos//
       total += product.price * product.quantity * 41;
     } else if (product.currency === "UYU") {
       total += product.price * product.quantity;
     }
   });
 
+  /*Divide la pantalla en 2 partes, una para las tarjetas de los productos y otra para el resumen de la compra 
+    (siempre que haya productos en el carrito desde el localStorage)*/ 
   contenedorCarrito.innerHTML = `
     <div class="lado-productos">
       <div class="productos-lista">
@@ -58,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
+  //Cambiar la cantidad de productos a comprar desde el carrito//
   const inputsCantidad = contenedorCarrito.querySelectorAll(".cantidad-input");
   inputsCantidad.forEach(input => {
     input.addEventListener("change", (ev) => {
@@ -70,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
       const index = cart.findIndex(item => String(item.id) === idString);
-      if (index === -1) return;
+      if (index === -1) return; //Evita que haya cantidades negativas//
 
       if (cantidad === 0) {
         cart.splice(index, 1);
@@ -86,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const vaciarCarrito = document.getElementById("vaciar-carrito");
 
+  //Función para vaciar el carrito//
   vaciarCarrito.addEventListener("click", () => {
     localStorage.removeItem("cart");
     location.reload();
@@ -94,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
   });
 
+  //Al tocar el botón de Ir al Pago, nos lleva a la página buy.html donde están las opciones de compra//
   const irPago = document.getElementById("pagar");
   irPago.addEventListener("click", () => {
     window.location.href = "buy.html";
