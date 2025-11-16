@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const mainImage = document.getElementById("product-image");
             imageContainer.innerHTML = "";
 
-            if (images.length > 0) {
+            if (images.length > 0) { //Si hay imágenes guardadas setea la primera como la principal
                 mainImage.innerHTML = `<img src="${images[0]}" class="img-fluid">`;
             }
 
-            images.forEach((imgSrc, index) => {
+            images.forEach((imgSrc, index) => { //Configura las imágenes guardadas
                 const img = document.createElement("img");
                 img.src = imgSrc;
                 img.classList.add("img-thumbnail",);
@@ -53,21 +53,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 showImage();
             });
 
-            function showImage() {
+            function showImage() { //Muestra la imagen seleccionada
                 mainImage.innerHTML = `<img src="${images[currentIndex]}" class="img-fluid">`;
             }
 
             const relatedContainer = document.getElementById("relatedProducts");
             relatedContainer.innerHTML = "";
 
-            data.relatedProducts.forEach(item => {
+            data.relatedProducts.forEach(item => { //Muestra los productos relacionados
                 const card = document.createElement("div");
                 card.classList.add("related-item");
 
                 card.innerHTML = `
                 <img src="${item.image}" alt="${item.name}" class="related-img">
                 <p>${item.name}</p>
-            `;
+                `;
 
                 card.addEventListener("click", () => {
                     localStorage.setItem("selectedProductId", item.id);
@@ -81,15 +81,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const agregarBtn = document.getElementById("agr-carrito");
             const cantidadInput = document.getElementById("cantidad");
 
-            function getCart() {
+            function getCart() { //Devuelve el carito guardado en el localStorage 
                 return JSON.parse(localStorage.getItem("cart")) || [];
             }
 
-            function saveCart(cart) {
+            function saveCart(cart) { //Guarda el carrito en el localStorage
                 localStorage.setItem("cart", JSON.stringify(cart));
             }
 
-            function crearProducto() {
+            function crearProducto() { //Crea un objeto "Producto"
                 return {
                     id: data.id,
                     name: data.name,
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-
+            //Al hacer click en el boton de agregar crea un producto y lo grega al carrito guardado en el localStorage
             agregarBtn.addEventListener("click", () => {
                 const nuevoProducto = crearProducto();
                 let cart = getCart();
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Producto añadido al carrito ✅");
             });
 
-
+            //Hace lo mismo que el anterior pero te lleva a la pantalla de carrito
             comprarBtn.addEventListener("click", () => {
                 const nuevoProducto = crearProducto();
                 let cart = getCart();
@@ -135,14 +135,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = "cart.html";
             });
 
-
-
-
             const inputCantidad = document.getElementById("cantidad");
             const subtotalSpan = document.getElementById("subtotal");
 
+            //Cuando cambia la cantidad seleccionada guarda el valor nuevo y lo muestra 
             inputCantidad.addEventListener("change", () => {
-                const cantidad = inputCantidad.value; 
+                const cantidad = inputCantidad.value;
                 const subtotal = cantidad * data.cost;
 
                 subtotalSpan.innerText = `${data.currency} ${subtotal}`;
@@ -165,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function showComments(commentsArray) {
+function showComments(commentsArray) { //Crea las tarjetas de los comentarios
     let htmlContent = "";
 
     for (let comment of commentsArray) {

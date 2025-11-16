@@ -83,12 +83,14 @@ select {
 }
 
 .botones {
-    gap: 20em;
+    width: 90%;
     justify-content: space-between;
 }
 
-.subtotal, .costo-envio, .total {
-    margin-left: 8em;
+.subtotal,
+.costo-envio,
+.total {
+    margin-left: 5%;
 }
 
 footer {
@@ -110,9 +112,11 @@ footer {
         flex-direction: column;
     }
 
-    .subtotal, .costo-envio, .total {
-    margin-left: 2em;
-}
+    .subtotal,
+    .costo-envio,
+    .total {
+        margin-left: 2em;
+    }
 
     .botones {
         gap: 1em
