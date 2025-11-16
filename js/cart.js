@@ -69,12 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("change", (ev) => {
       /* normalice valores */
       const IdCrudo = ev.target.dataset.id;
-      const idString = String(IdCrudo); 
+      const idString = String(IdCrudo);
       const ValueCrudo = ev.target.value;
       const nuevaCantidad = Number(ValueCrudo);
       const cantidad = Number(nuevaCantidad) ? nuevaCantidad : 0;
 
-      
+
       const index = cart.findIndex(item => String(item.id) === idString);
       if (index === -1) return; //Evita que haya cantidades negativas//
 
@@ -101,12 +101,17 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount();
   });
 
+  document.getElementById("pagar").addEventListener("click", () => {
+    window.location.href = "buy.html"
+  });
+
   //Al tocar el botón de Ir al Pago, nos lleva a la página buy.html donde están las opciones de compra//
   const irPago = document.getElementById("pagar");
   irPago.addEventListener("click", () => {
     window.location.href = "buy.html";
   });
 });
+
 
 
 

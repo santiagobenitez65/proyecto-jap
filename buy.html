@@ -79,9 +79,9 @@
             </div>
 
             <h6 class="subtitle">Forma de pago</h6>
-            <div class="contenedor fit-content">
+            <div class="contenedor">
                 <select name="forma-de-pago" id="forma-de-pago">
-                    <option value="0">Seleccione forma de pago</option>
+                    <option disabled selected>Seleccione forma de pago</option>
                     <option value="1">Tarjeta de débito o crédito</option>
                     <option value="2">Transferencia Bancaria</option>
                 </select>
@@ -97,7 +97,10 @@
                 </select>
             </div>
             <div class="costos">
-                <h6 class="subtitle">Costos</h6>
+                <h5 class="subtitle">Costos</h5>
+                <section class="subtotal"></section>
+                <section class="costo-envio"></section>
+                <section class="total"></section>
             </div>
              <div class="contenedor botones">
                 <button id="cancelar">Cancelar</button>
